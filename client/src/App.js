@@ -23,7 +23,6 @@ function App() {
             <Portfolio />
           </Route>
         </Switch>
-
       </div>
     </Router>
   );

@@ -6,18 +6,18 @@ function About() {
   // const [me, setMe] = useState([]);
 
   return (
-    <Container>
+    <Container fluid={true}>
       <Row>
-        <div class="col-md-2"></div>
-        <div class="content col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
-          <div class="row font-weight-bold p-2">
+        <div className="col-md-2"></div>
+        <div className="content col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
+          <div className="row font-weight-bold p-2">
             <h3>About Me</h3>
           </div>
-          <div class="row p-2 align-items-end">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <img id="me" class="img-fluid" src="assets/images/IMG_5965.JPG" alt="This is me"></img>
+          <div className="row p-2 align-items-end">
+            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <img id="me" className="img-fluid" src="assets/images/IMG_5965.JPG" alt="This is me"></img>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+            <div className="col-lg-8 col-md-8 col-sm-8 col-xs-12">
               <p>
                 My name is James Lovejoy and I am an aspiring web developer. I am learning html, CSS, and Bootstrap.
                 What I love to do is solve problems. To quote the great Vanilla Ice
@@ -29,8 +29,8 @@ function About() {
             </p>
             </div>
           </div>
-          <div class="row p-2">
-            <div class="col">
+          <div className="row p-2">
+            <div className="col">
               <p>
                 I have a pretty diverse background beginning with a mechanical engineering degree, backed up with forensic
                 engineering exerpience, time spent as a field staff for a wilderness therapy company in the deserts of
@@ -48,29 +48,29 @@ function About() {
             </div>
           </div>
         </div>
-        <div id="carouselRow" class="row justify-content-center m-3">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-            <div class="card text-white bg-dark text-center">
-              <div class="card-header">Enjoy Some Photos I've Taken Myself!</div>
-              <div class="card-body">
-                <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div id="carouselRow" className="row justify-content-center m-3">
+          <div className="col-sm-12 col-md-12 col-lg-12">
+            <div className="card text-white bg-dark text-center">
+              <div className="card-header">Enjoy Some Photos I've Taken Myself!</div>
+              <div className="card-body">
+                <div id="carousel" className="carousel slide" data-ride="carousel">
 
                   {/* Indicators */}
-                  <ul class="carousel-indicators">
-                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                  <ul className="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" className="active"></li>
                     <li data-target="#carousel" data-slide-to="1"></li>
                     <li data-target="#carousel" data-slide-to="2"></li>
                   </ul>
 
                   {/* The slideshow */}
-                  <div id="carouselInner" class="carousel-inner justify-content-between"></div>
+                  <div id="carouselInner" className="carousel-inner justify-content-between"></div>
 
                   {/* Left and right controls */}
-                  <a class="carousel-control-prev" href="#carousel" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                  <a className="carousel-control-prev" href="#carousel" data-slide="prev">
+                    <span className="carousel-control-prev-icon"></span>
                   </a>
-                  <a class="carousel-control-next" href="#carousel" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                  <a className="carousel-control-next" href="#carousel" data-slide="next">
+                    <span className="carousel-control-next-icon"></span>
                   </a>
 
                 </div>
@@ -78,7 +78,7 @@ function About() {
             </div>
           </div>
         </div>
-        <div class="col-md-2"></div>
+        <div className="col-md-2"></div>
       </Row>
     </Container>
   );
