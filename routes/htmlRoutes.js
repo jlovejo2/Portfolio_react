@@ -1,6 +1,5 @@
 //This variable is calling the path package so that we are able to cal our html files
 const express = require('express');
-
 const router = express.Router();
 
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import './style.css'
 
 function Nav() {
     return (
-        <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
+        <nav className='navbar navbar-expand-lg navbar-dark cloud'>
             <a className='navbar-brand' href="/">
                 Home Page
             </a>

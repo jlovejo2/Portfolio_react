@@ -3,7 +3,6 @@ require('dotenv').config();
 const emailSender = require('./nodeMailer');
 const nodemailer = require("nodemailer");
 const express = require("express");
-const exphbs = require('express-handlebars');
 
 //this line tells the node that we are creating an express server
 const app = express();
@@ -21,11 +20,6 @@ app.use(express.json());
 //Essentiall says if you can find a route for a file go to public folder and look in there
 app.use(express.static("public"));
 
-//Handlerbars server code
-//==============================
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
 //Enables CORS for all resoures on my server
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -38,7 +32,7 @@ app.use(function(req, res, next) {
 //the below lines of code point our server to a series of routing files
 //in these files are lines of code that map out how our server responds when a user visits the app 
 //_____________________________________
-// exphbs({ defaultLayout: 'main', helpers: require("./helpers/handlebars.js").helpers})
+
 app.use(routes);
 app.use(routes1);
 
