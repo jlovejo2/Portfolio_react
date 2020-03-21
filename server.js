@@ -1,7 +1,7 @@
 require('dotenv').config();
 
-const emailSender = require('./nodeMailer');
-const nodemailer = require("nodemailer");
+// const emailSender = require('./nodeMailer');
+// const nodemailer = require("nodemailer");
 const express = require("express");
 
 //this line tells the node that we are creating an express server
@@ -10,8 +10,7 @@ const app = express();
 //checking whether or not you are on a local machine or being hosted
 const PORT = process.env.PORT || process.env.MY_PORT;
 
-//Requiring the html-routes.js file which is used below to render routes for handlebars
-const routes = require('./routes/htmlRoutes');
+//Requiring the apiRoutes.js file which creates the route for react front end to call nodemailer
 const routes1 = require('./routes/apiRoutes');
 
 app.use(express.urlencoded({ extended: true }));
@@ -33,7 +32,6 @@ app.use(function(req, res, next) {
 //in these files are lines of code that map out how our server responds when a user visits the app 
 //_____________________________________
 
-app.use(routes);
 app.use(routes1);
 
 //___________________

@@ -4,10 +4,11 @@ const router = express.Router();
 
 const emailSender = require('../nodeMailer');
 
-
 router.post('/sendEmail/', function (req, res) {
-        //Send the
-    const sender = req.body.fromAddress;
+        
+    console.log(req.body);
+    //Send the
+    const sender = req.body.email;
     const emailSubject = req.body.subject;
     const emailText = `My name is: ${req.body.name}
     Here is my message: ${req.body.body}`;

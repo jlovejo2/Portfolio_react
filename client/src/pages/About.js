@@ -21,7 +21,7 @@ function About() {
               <p>
                 My name is James Lovejoy and I am an aspiring web developer. I am learning html, CSS, and Bootstrap.
                 What I love to do is solve problems. To quote the great Vanilla Ice
-              <a href="https://www.youtube.com/watch?v=rog8ou-ZepE" target="_blank">"If there's a problem yo, i'll solve
+              <a href="https://www.youtube.com/watch?v=rog8ou-ZepE" target="_blank" rel='noopener noreferrer'>"If there's a problem yo, i'll solve
                 it"</a>.
               Debugging code and implementing new concepts into an already existing design are the things that have
               really

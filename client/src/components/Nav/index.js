@@ -9,9 +9,9 @@ function Nav() {
             <a className='navbar-brand' href="/">
                 Home Page
             </a>
-            <ul class="row navbar-nav">
+            <ul className="row navbar-nav">
                 <li className="nav-item active p-1 m-2">
-                    <a className="nav-link" href="/">About-me <span class="sr-only">(current)</span></a>
+                    <a className="nav-link" href="/">About-me <span className="sr-only">(current)</span></a>
                 </li>
                 <li className="nav-item p-1 m-2">
                     <a className="nav-link" href="/portfolio">Portfolio</a>

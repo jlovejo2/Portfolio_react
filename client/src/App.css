@@ -42,3 +42,21 @@
   border: 3px solid black;
   height: 100%;
 }
+
+.portfolio-link {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  text-align: center;
+  border: 3px solid black;
+  background-color: rgba(0,128,128,.5);
+  color: white;
+  width: 90%;
+}
+
+.img-responsive {
+  position: relative;
+  left: 10px;
+  width: 100%;
+  border: 2px solid teal;
+}
