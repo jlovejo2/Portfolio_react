@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row } from '../components/Grid';
+import Carousel from 'react-bootstrap/Carousel';
 
 function About() {
 
@@ -48,34 +49,50 @@ function About() {
             </div>
           </div>
         </div>
-        <div id="carouselRow" className="row justify-content-center m-3">
-          <div className="col-sm-12 col-md-12 col-lg-12">
-            <div className="card text-white bg-dark text-center">
-              <div className="card-header">Enjoy Some Photos I've Taken Myself!</div>
-              <div className="card-body">
-                <div id="carousel" className="carousel slide" data-ride="carousel">
-
-                  {/* Indicators */}
-                  <ul className="carousel-indicators">
-                    <li data-target="#carousel" data-slide-to="0" className="active"></li>
-                    <li data-target="#carousel" data-slide-to="1"></li>
-                    <li data-target="#carousel" data-slide-to="2"></li>
-                  </ul>
-
-                  {/* The slideshow */}
-                  <div id="carouselInner" className="carousel-inner justify-content-between"></div>
-
-                  {/* Left and right controls */}
-                  <a className="carousel-control-prev" href="#carousel" data-slide="prev">
-                    <span className="carousel-control-prev-icon"></span>
-                  </a>
-                  <a className="carousel-control-next" href="#carousel" data-slide="next">
-                    <span className="carousel-control-next-icon"></span>
-                  </a>
-
-                </div>
-              </div>
-            </div>
+        <div class="card text-white bg-dark text-center">
+          <div class="card-header">Enjoy Some Photos I've Taken Myself!</div>
+          <div class="card-body">
+            <Carousel>
+              <Carousel.Item
+                pauseOnHover={true}
+                fade={false}
+                wrap={true}
+              >
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0001.jpg'
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0002.jpg'
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0003.jpg'
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0004.jpg'
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0005.jpg'
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
           </div>
         </div>
         <div className="col-md-2"></div>
