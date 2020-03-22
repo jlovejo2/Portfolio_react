@@ -8,8 +8,7 @@ function About() {
 
   return (
     <Container fluid={true}>
-      <Row>
-        <div className="col-md-2"></div>
+      <Row center={true}>
         <div className="content col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
           <div className="row font-weight-bold p-2">
             <h3>About Me</h3>
@@ -49,7 +48,9 @@ function About() {
             </div>
           </div>
         </div>
-        <div class="card text-white bg-dark text-center">
+        </Row>
+        <Row center ={true}>
+        <div class="card text-white bg-dark text-center w-75">
           <div class="card-header">Enjoy Some Photos I've Taken Myself!</div>
           <div class="card-body">
             <Carousel>
