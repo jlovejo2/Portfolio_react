@@ -24,8 +24,8 @@ function App() {
             <Portfolio />
           </Route>
         </Switch>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 }

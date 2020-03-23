@@ -67,7 +67,7 @@ const Portfolio = () => {
         <Container fluid={true}>
             <Row center={true}>
                 <div className="content col-lg-10">
-                    <div className="row font-weight-bold w-100 p-4 mt-4">
+                    <div className="row justify-content-center font-weight-bold w-100 p-4 mt-4">
                         <h3>Portfolio</h3>
                         <SearchTable
                                 selectSearch={filterValue}
@@ -81,17 +81,16 @@ const Portfolio = () => {
                                 <tr>
                                     <th scope='col' style={{ width: '5%' }}>#</th>
                                     <th scope='col' style={{ width: '5%' }}>Title</th>
-                                    <th scope='col' style={{ width: '35%' }}/*onClick={e => this.onSortString(e, 'firstName', this.state.ascKey)}*/>Image</th>
+                                    <th scope='col' style={{ width: '45%' }}/*onClick={e => this.onSortString(e, 'firstName', this.state.ascKey)}*/>Image</th>
                                     {/* <th scope='col' style={{ width: '20%' }}>Functional Preview</th> */}
-                                    <th scope='col' style={{ width: '10' }}>Deployed App Link</th>
-                                    <th scope='col' style={{ width: '10%' }}/*onClick={e => this.onSortNumber(e, 'yearsWithCompany', this.state.ascKey)}*/>Description</th>
+                                    <th scope='col' style={{ width: '5%' }}>Deployed App Link</th>
+                                    <th scope='col' style={{ width: '35%' }}/*onClick={e => this.onSortNumber(e, 'yearsWithCompany', this.state.ascKey)}*/>Description</th>
                                     <th scope='col' style={{ width: '5%' }}>Technologies Used</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {
                                     filteredProjects.map((value, index) => {
-                                        console.log(value);
                                         return <TableRow
                                             scope="row"
                                             key={index}

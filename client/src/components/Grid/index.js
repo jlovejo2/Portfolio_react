@@ -5,7 +5,11 @@ import './style.css'
 
 // This Container component allows us to use a bootstrap container without worrying about class names
 export function Container({ fluid, children }) {
+<<<<<<< HEAD
   return <div className={`container${fluid ? "-fluid" : ""}`}>{children}</div>;
+=======
+  return <div className={`container${fluid ? "-fluid" : ""} m-3`}>{children}</div>;
+>>>>>>> 25f4586... added CSS and classes to to make pages look more crisp and clean
 }
 
 // This Row component lets us use a bootstrap row without having to think about class names
