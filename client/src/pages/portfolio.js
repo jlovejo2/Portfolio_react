@@ -12,6 +12,7 @@ const Portfolio = () => {
     const [projects, setProjects] = useState(portfolioObject);
     const [filteredProjects, setFilteredProjects] = useState(portfolioObject);
     const [search, setSearch] = useState('');
+    const [animateGif, setAnimateGif] = useState(false);
 
     useEffect( () => {
         console.log(filterValue);
@@ -53,6 +54,15 @@ const Portfolio = () => {
         console.log(filterValue);
     }
 
+    const handleAnimate = (event) => {
+        console.log(event.target);
+        setAnimateGif(true);
+    }
+
+    const endAnimate = (event) => {
+        setAnimateGif(false);
+    }
+
     return (
         <Container fluid={true}>
             <Row center={true}>
@@ -71,10 +81,10 @@ const Portfolio = () => {
                                 <tr>
                                     <th scope='col' style={{ width: '5%' }}>#</th>
                                     <th scope='col' style={{ width: '5%' }}>Title</th>
-                                    <th scope='col' style={{ width: '25%' }}/*onClick={e => this.onSortString(e, 'firstName', this.state.ascKey)}*/>Image</th>
-                                    <th scope='col' style={{ width: '20%' }}>Functional Preview</th>
+                                    <th scope='col' style={{ width: '35%' }}/*onClick={e => this.onSortString(e, 'firstName', this.state.ascKey)}*/>Image</th>
+                                    {/* <th scope='col' style={{ width: '20%' }}>Functional Preview</th> */}
                                     <th scope='col' style={{ width: '10' }}>Deployed App Link</th>
-                                    <th scope='col' style={{ width: '30%' }}/*onClick={e => this.onSortNumber(e, 'yearsWithCompany', this.state.ascKey)}*/>Description</th>
+                                    <th scope='col' style={{ width: '10%' }}/*onClick={e => this.onSortNumber(e, 'yearsWithCompany', this.state.ascKey)}*/>Description</th>
                                     <th scope='col' style={{ width: '5%' }}>Technologies Used</th>
                                 </tr>
                             </thead>
@@ -86,10 +96,14 @@ const Portfolio = () => {
                                             scope="row"
                                             key={index}
                                             num={index}
+                                            animate={animateGif}
                                             image={value.imgLink}
+                                            gifLink={value.functionalPreview}
                                             appLink={value.appLink}
                                             title={value.title}
-                                            gifLink={value.functionalPreview}
+                                            startAnimate={handleAnimate}
+                                            stopAnimate={endAnimate}
+                                            
                                             desc={value.description}
                                         >
                                             <UnorderList>
