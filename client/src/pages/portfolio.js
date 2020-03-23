@@ -11,57 +11,54 @@ const Portfolio = () => {
     const [filterValue, setFilterValue] = useState('');
     const [projects, setProjects] = useState(portfolioObject);
     const [filteredProjects, setFilteredProjects] = useState(portfolioObject);
+    const [search, setSearch] = useState('');
 
-    // useEffect( () => {
-
-    //     setProjects({projects: portfolioObject});
-    //     setFilteredProjects({filteredProjects: portfolioObject});
-    //     console.log(projects);
-    //     console.log(filteredProjects);
-    // })
-        
-    const onFilter = (event, value, filterKey) => {
-        console.log('filtering')
-       
-        if (filterKey === "tech") {
-            console.log('tech');
-            console.log(value);
-            const filterProjs = projects.filter((project) => {
-                console.log(project.tech);
-                console.log(value);
-                if (project.tech.includes(value))
-                return project
-                })
-            setFilteredProjects(filterProjs);
+    useEffect( () => {
+        console.log(filterValue);
+        console.log(search);
+        if (!search) {
+            setFilteredProjects(projects);
         } else {
-            console.log('else');
-            setFilteredProjects(projects)
-            console.log(filteredProjects);
-        }
+            if (filterValue === "tech") {
+                console.log('tech');
+                console.log(search);
+                const filterProjs = projects.filter((project) => {
+                    console.log(project.tech);
+                    console.log(search);
+                    if (project.tech.includes(search))
+                    return project
+                    })
+                setFilteredProjects(filterProjs);
+            };
+        };
+    }, [search])
+        
+    const handleSearchChange = (event) => {
+ 
+        console.log('search change');
+        setSearch(event.target.value);
+
+        console.log(search);
     }
 
      //This function is used in the <Select/> to add the value the user select to the state variable
-    const handleChange = (event) => {
-        console.log(event.target.value);
-        console.log('handle change');
+    const handleSelectChange = (event) => {
+        console.log('select change');
         setFilterValue(event.target.value);
+
         console.log(filterValue);
     }
-    // const [projects, setProjects] = useState();
-
-    // setProjects({projects: portfolioObject});
 
     return (
         <Container fluid={true}>
             <Row center={true}>
-                {/* <div className="col-lg-1"></div> */}
                 <div className="content col-lg-10">
                     <div className="row font-weight-bold w-100 p-4 mt-4">
                         <h3>Portfolio</h3>
                         <SearchTable
                                 selectSearch={filterValue}
-                                selectChange={handleChange}
-                                filterFunc={e => onFilter(e, e.target.value, filterValue)}
+                                selectChange={handleSelectChange}
+                                filterFunc={handleSearchChange}
                         />
                     </div>
                     <div className='table-responsive'>
@@ -105,7 +102,6 @@ const Portfolio = () => {
                         </table>
                     </div>
                 </div>
-                {/* <div className="col-lg-1"></div> */}
             </Row>
         </Container>
 
