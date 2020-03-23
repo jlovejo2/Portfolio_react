@@ -1,8 +1,8 @@
 # Portfolio_react
 This repo is redesigning my portfolio using react
 
-the link to my page is shown below:
-https://jlovejo2.github.io/Portfolio_react/
+deployed app:
+https://portfolio-react-jlovejo2.herokuapp.com/
 
 ## Table of Contents
 * [About-me](#about-me)
@@ -57,6 +57,7 @@ This project was created with:
 
 ## Issues With Code
 * the gifs all play at once and stay in the frame of the table.  Would like to be able to have them open up to a larger frame so they are easier to view
+* issues with email sending on deployed app
 
 
 
