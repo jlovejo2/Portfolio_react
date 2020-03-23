@@ -8,7 +8,7 @@ function About() {
   return (
     <Container fluid={true}>
       <Row center={true}>
-        <div className="content col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
+        <div className="content animated fadeInRight delay-1s col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
           <div className="row font-weight-bold p-2">
             <h3>About Me</h3>
           </div>
@@ -49,7 +49,7 @@ function About() {
         </div>
         </Row>
         <Row center={true}>
-        <div className="card text-white bg-dark text-center mt-2 w-75">
+        <div className="card animated bounceInDown delay-2s text-white bg-dark text-center mt-2 w-75">
           <div className="card-header">Enjoy Some Photos I've Taken Myself!</div>
           <div className="card-body">
             <Carousel

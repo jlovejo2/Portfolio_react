@@ -25,14 +25,15 @@ function Contact() {
         subject: contactForm.subject,
         body: contactForm.body
       })
-        .catch(err => console.log(err));
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
     }
   }
 
   return (
     <Container fluid={true}>
       <Row center={true}>
-        <div className="content col-sm-6">
+        <div className="content animated fadeInRight delay-1s col-sm-6">
           <div className="row justify-content-center font-weight-bold p-2">
             <h3>Contact</h3>
           </div>
