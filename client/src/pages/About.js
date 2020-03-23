@@ -4,7 +4,6 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function About() {
 
-  // const [me, setMe] = useState([]);
 
   return (
     <Container fluid={true}>
@@ -49,16 +48,16 @@ function About() {
           </div>
         </div>
         </Row>
-        <Row center ={true}>
-        <div class="card text-white bg-dark text-center w-75">
-          <div class="card-header">Enjoy Some Photos I've Taken Myself!</div>
-          <div class="card-body">
-            <Carousel>
-              <Carousel.Item
-                pauseOnHover={true}
-                fade={false}
-                wrap={true}
-              >
+        <Row center={true}>
+        <div className="card text-white bg-dark text-center mt-2 w-75">
+          <div className="card-header">Enjoy Some Photos I've Taken Myself!</div>
+          <div className="card-body">
+            <Carousel
+             pauseOnHover={true}
+             fade={true}
+             wrap={true}
+            >
+              <Carousel.Item>
                 <img
                   className="img-fluid rounded"
                   src='assets/images/Carousel/img_0001.jpg'
@@ -96,7 +95,6 @@ function About() {
             </Carousel>
           </div>
         </div>
-        <div className="col-md-2"></div>
       </Row>
     </Container>
   );

@@ -4,15 +4,13 @@ import React from 'react';
 function searchTable(props) {
     // console.log(props.key);
     return (
-        <div className="input-group mb-3">
-
-            <select className="custom-select-sm" value={props.value} onChange={props.selectChange}>
-                <option defaultValue="allEmployees">All Employees</option>
-                <option value="firstName">First Name</option>
-                <option value="lastName">Last Name</option>
-                <option value="yearsWithCompany">Years With Company</option>
+        <div className="input-group">
+            <label className="mr-3">Select Filter Option</label>
+            <select className="custom-select-sm" value={props.selectSearch} onChange={props.selectChange}>
+                <option defaultValue="title">Title</option>
+                <option value="tech">Tech Used</option>
             </select>
-            <input type="text" className="form-control" onChange={props.filterFunc} ></input>
+            <input type="text" className="md ml-3" placeholder='Type search text here' onChange={props.filterFunc} ></input>
 
         </div>
     )
