@@ -57,7 +57,6 @@ This project was created with:
 
 ## Issues With Code
 * the gifs all play at once and stay in the frame of the table.  Would like to be able to have them open up to a larger frame so they are easier to view
-* issues with email sending on deployed app
 
 
 
