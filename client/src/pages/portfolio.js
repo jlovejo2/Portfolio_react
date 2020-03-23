@@ -1,12 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row } from '../components/Grid';
 import TableRow from '../components/tableRow';
 import { UnorderList, ListItem } from '../components/unorderedList';
+import SearchTable from '../components/searchTable';
 import portfolioObject from '../utils/projects';
 
 
-function Portfolio() {
+const Portfolio = () => {
 
+    const [filterValue, setFilterValue] = useState('');
+    const [projects, setProjects] = useState(portfolioObject);
+    const [filteredProjects, setFilteredProjects] = useState(portfolioObject);
+
+    // useEffect( () => {
+
+    //     setProjects({projects: portfolioObject});
+    //     setFilteredProjects({filteredProjects: portfolioObject});
+    //     console.log(projects);
+    //     console.log(filteredProjects);
+    // })
+        
+    const onFilter = (event, value, filterKey) => {
+        console.log('filtering')
+       
+        if (filterKey === "tech") {
+            console.log('tech');
+            console.log(value);
+            const filterProjs = projects.filter((project) => {
+                console.log(project.tech);
+                console.log(value);
+                if (project.tech.includes(value))
+                return project
+                })
+            setFilteredProjects(filterProjs);
+        } else {
+            console.log('else');
+            setFilteredProjects(projects)
+            console.log(filteredProjects);
+        }
+    }
+
+     //This function is used in the <Select/> to add the value the user select to the state variable
+    const handleChange = (event) => {
+        console.log(event.target.value);
+        console.log('handle change');
+        setFilterValue(event.target.value);
+        console.log(filterValue);
+    }
     // const [projects, setProjects] = useState();
 
     // setProjects({projects: portfolioObject});
@@ -18,6 +58,11 @@ function Portfolio() {
                 <div className="content col-lg-10">
                     <div className="row font-weight-bold w-100 p-4 mt-4">
                         <h3>Portfolio</h3>
+                        <SearchTable
+                                selectSearch={filterValue}
+                                selectChange={handleChange}
+                                filterFunc={e => onFilter(e, e.target.value, filterValue)}
+                        />
                     </div>
                     <div className='table-responsive'>
                         <table className="table">
@@ -34,7 +79,7 @@ function Portfolio() {
                             </thead>
                             <tbody>
                                 {
-                                    portfolioObject.map((value, index) => {
+                                    filteredProjects.map((value, index) => {
                                         console.log(value);
                                         return <TableRow
                                             scope="row"
@@ -65,6 +110,7 @@ function Portfolio() {
         </Container>
 
     );
-}
+
+                            }
 
 export default Portfolio;
