@@ -20,16 +20,20 @@ const Portfolio = () => {
             setFilteredProjects(projects);
         } else {
             if (filterValue === "tech") {
-                console.log('tech');
-                console.log(search);
+
                 const filterProjs = projects.filter((project) => {
-                    console.log(project.tech);
-                    console.log(search);
                     if (project.tech.includes(search))
                     return project
                     })
                 setFilteredProjects(filterProjs);
-            };
+            } else {
+                const filterProjs = projects.filter((project) => {
+                    
+                    if (project.title.includes(search))
+                    return project
+                    })
+                setFilteredProjects(filterProjs);
+            }
         };
     }, [search])
         

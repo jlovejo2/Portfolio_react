@@ -7,7 +7,7 @@ function searchTable(props) {
         <div className="input-group mb-3">
 
             <select className="custom-select-sm" value={props.selectSearch} onChange={props.selectChange}>
-                <option defaultValue="allProjects">All Projects</option>
+                <option defaultValue="title">Title</option>
                 <option value="tech">Tech Used</option>
             </select>
             <input type="text" className="form-control" onChange={props.filterFunc} ></input>
