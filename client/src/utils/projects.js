@@ -3,7 +3,7 @@ const portfolioObject = [
         imgLink: "assets/images/nutridish.png",
         appLink: "https://nutridish.herokuapp.com",
         title: "Nutridish",
-        functionalPreview: '',
+        functionalPreview: 'assets/gifs/nutridish.gif',
         description: 'The purpose of this app is for the user to either login or create an account.  Once that has been done they can search for recipes based on nutrient and diet selection.  These recipes can be saved in their account and referenced for later use.',
         tech: ['react', 'javascript', 'SQL', 'sequelize']
     },
@@ -11,7 +11,7 @@ const portfolioObject = [
         imgLink: "assets/images/TeamHtml.png",
         appLink: "https://github.com/jlovejo2/Team-Generator",
         title: "Team Generator",
-        functionalPreview: '',
+        functionalPreview: 'assets/gifs/team-generator.gif',
         description: 'The purpose of this app is for the user to create a quick an easy html to easiliy reference the team members contact info.',
         tech: []
     },
@@ -19,7 +19,7 @@ const portfolioObject = [
         imgLink: "assets/images/searchApp.jpeg",
         appLink: "https://jlovejo2.github.io/Multi-Media-Search-App/",
         title: "Multi Media Search App",
-        functionalPreview: '',
+        functionalPreview: 'assets/gifs/multi-media-search.gif',
         description: 'The purpose of this app is to search for books, games, and movies based on the same keyword or title.',
         tech: []
     },
@@ -27,7 +27,7 @@ const portfolioObject = [
         imgLink: "assets/images/trivia_quiz.jpg",
         appLink: "https://jlovejo2.github.io/Trivia_quiz/",
         title: "Trivia Quiz",
-        functionalPreview: '',
+        functionalPreview: 'assets/gifs/trivia-quiz.gif',
         description: 'This app is a coding trivia quiz.  It generates the questions one at a time with a score being based on a timer that begins to run as soon as the quiz is started. Seconds are added for a correct answer and subtracted for an incorrect answer.',
         tech: []
     },
@@ -43,7 +43,7 @@ const portfolioObject = [
         imgLink: "assets/images/calendar.jpg",
         appLink: "https://jlovejo2.github.io/Word-Day-Calendar/",
         title: "Work Day Calendar",
-        functionalPreview: '',
+        functionalPreview: 'assets/gifs/work-day-calendar.gif',
         description: 'This is a calendar to keep track of events and tasks during the work day.  The calendar is dynamic and shows the current hour block in green, with past hour blocks in grey.',
         tech: []
     },  

@@ -6,8 +6,7 @@ function tableRow(props) {
         <tr>
             <th scope={props.scope}>{props.num + 1}</th>
             <td>{props.title}</td>
-            <td onMouseEnter={props.startAnimate} onMouseLeave={props.stopAnimate}><img className='img-thumbnail' alt='thumbnail' src={props.animate ? `${props.gifLink}` : `${props.image}`}></img></td>
-            {/* <td>{props.gifLink}</td> */}
+            <td onMouseEnter={props.startAnimate} onMouseLeave={props.stopAnimate}><img className='img-thumbnail' alt='Not Available' src={props.animate ? `${props.gifLink}` : `${props.image}`}></img></td>
             <td>
                 <a href={props.appLink}>{props.appLink}</a>
             </td>

@@ -66,7 +66,7 @@ const Portfolio = () => {
     return (
         <Container fluid={true}>
             <Row center={true}>
-                <div className="content col-lg-10">
+                <div className="content animated fadeInRight delay-1s col-lg-10">
                     <div className="row justify-content-center font-weight-bold w-100 p-4 mt-4">
                         <h3>Portfolio</h3>
                         <SearchTable

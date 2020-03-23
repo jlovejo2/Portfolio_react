@@ -30,6 +30,8 @@ async function emailSender(toAddress, fromAddress, subject, body) {
         } else {
 
             console.log("Message sent: " + info.response);
+            
+            res.json(info);
         }
     });
 };

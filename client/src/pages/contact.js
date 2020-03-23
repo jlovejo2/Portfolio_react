@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { Container, Row } from '../components/Grid';
 import { Input, TextArea, FormBtn } from '../components/Form';
+import Modal from 'react-bootstrap/Modal';
 import API from '../utils/api';
-
 
 function Contact() {
 
   const [contactForm, setContactForm] = useState([])
+  const [show, setShow] = useState(false);
+
+  function handleClose(event) {
+    setShow(false);
+  }
 
   function handleInputChange(event) {
     console.log(event.target.name);
@@ -25,14 +30,17 @@ function Contact() {
         subject: contactForm.subject,
         body: contactForm.body
       })
-        .catch(err => console.log(err));
+        .then(res => {
+          if (res.data) setShow(true);
+        })
+        .catch(err => console.log(err))
     }
   }
 
   return (
     <Container fluid={true}>
       <Row center={true}>
-        <div className="content col-sm-6">
+        <div className="content animated fadeInRight delay-1s col-sm-6">
           <div className="row justify-content-center font-weight-bold p-2">
             <h3>Contact</h3>
           </div>
@@ -77,8 +85,13 @@ function Contact() {
             </div>
           </div>
         </div>
+        <Modal show={show} onClick={handleClose} >
+            <Modal.Header closeButton>
+              <Modal.Title>Your email has been sent!</Modal.Title>
+            </Modal.Header>
+        </Modal>
       </Row>
-    </Container>
+    </Container >
   );
 }
 
