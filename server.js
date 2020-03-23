@@ -1,46 +1,35 @@
 require('dotenv').config();
 
-const emailSender = require('./nodeMailer');
-const nodemailer = require("nodemailer");
+// const emailSender = require('./nodeMailer');
+// const nodemailer = require("nodemailer");
 const express = require("express");
-const exphbs = require('express-handlebars');
 
 //this line tells the node that we are creating an express server
 const app = express();
 //this line sets an initial port to be used in our listener.  the process.env.PORT is key because it is 
 //checking whether or not you are on a local machine or being hosted
-const PORT = process.env.PORT || process.env.MY_PORT;
+const PORT = process.env.PORT || 3001;
 
-//Requiring the html-routes.js file which is used below to render routes for handlebars
-const routes = require('./routes/htmlRoutes');
-const routes1 = require('./routes/apiRoutes');
+//Requiring the apiRoutes.js file which creates the route for react front end to call nodemailer
+const routes = require('./routes/apiRoutes');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 //This line of code makes the entire contents of the public folder acessible when running through the server.
 //Essentiall says if you can find a route for a file go to public folder and look in there
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
-//Handlerbars server code
-//==============================
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
-//Enables CORS for all resoures on my server
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
-  
+ 
+  if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 //______________________________________
 //ROUTER
 //the below lines of code point our server to a series of routing files
 //in these files are lines of code that map out how our server responds when a user visits the app 
 //_____________________________________
-// exphbs({ defaultLayout: 'main', helpers: require("./helpers/handlebars.js").helpers})
+
 app.use(routes);
-app.use(routes1);
 
 //___________________
 //LISTENER
@@ -50,13 +39,6 @@ app.use(routes1);
 app.listen(PORT, function() {
     console.log("App listening on PORT:" + PORT);
 });
-
-
-
-
-
-
-
 
 
 
@@ -82,3 +64,10 @@ app.listen(PORT, function() {
 // response is a string returned by SMTP transports and includes the last SMTP response from the server
 
 //for gmail use oath2
+
+// //Enables CORS for all resoures on my server
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });

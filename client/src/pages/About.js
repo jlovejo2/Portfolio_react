@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row } from '../components/Grid';
+import Carousel from 'react-bootstrap/Carousel';
 
 function About() {
 
@@ -7,8 +8,7 @@ function About() {
 
   return (
     <Container fluid={true}>
-      <Row>
-        <div className="col-md-2"></div>
+      <Row center={true}>
         <div className="content col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
           <div className="row font-weight-bold p-2">
             <h3>About Me</h3>
@@ -21,7 +21,7 @@ function About() {
               <p>
                 My name is James Lovejoy and I am an aspiring web developer. I am learning html, CSS, and Bootstrap.
                 What I love to do is solve problems. To quote the great Vanilla Ice
-              <a href="https://www.youtube.com/watch?v=rog8ou-ZepE" target="_blank">"If there's a problem yo, i'll solve
+              <a href="https://www.youtube.com/watch?v=rog8ou-ZepE" target="_blank" rel='noopener noreferrer'>"If there's a problem yo, i'll solve
                 it"</a>.
               Debugging code and implementing new concepts into an already existing design are the things that have
               really
@@ -48,34 +48,52 @@ function About() {
             </div>
           </div>
         </div>
-        <div id="carouselRow" className="row justify-content-center m-3">
-          <div className="col-sm-12 col-md-12 col-lg-12">
-            <div className="card text-white bg-dark text-center">
-              <div className="card-header">Enjoy Some Photos I've Taken Myself!</div>
-              <div className="card-body">
-                <div id="carousel" className="carousel slide" data-ride="carousel">
-
-                  {/* Indicators */}
-                  <ul className="carousel-indicators">
-                    <li data-target="#carousel" data-slide-to="0" className="active"></li>
-                    <li data-target="#carousel" data-slide-to="1"></li>
-                    <li data-target="#carousel" data-slide-to="2"></li>
-                  </ul>
-
-                  {/* The slideshow */}
-                  <div id="carouselInner" className="carousel-inner justify-content-between"></div>
-
-                  {/* Left and right controls */}
-                  <a className="carousel-control-prev" href="#carousel" data-slide="prev">
-                    <span className="carousel-control-prev-icon"></span>
-                  </a>
-                  <a className="carousel-control-next" href="#carousel" data-slide="next">
-                    <span className="carousel-control-next-icon"></span>
-                  </a>
-
-                </div>
-              </div>
-            </div>
+        </Row>
+        <Row center ={true}>
+        <div class="card text-white bg-dark text-center w-75">
+          <div class="card-header">Enjoy Some Photos I've Taken Myself!</div>
+          <div class="card-body">
+            <Carousel>
+              <Carousel.Item
+                pauseOnHover={true}
+                fade={false}
+                wrap={true}
+              >
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0001.jpg'
+                  alt="First slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0002.jpg'
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0003.jpg'
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0004.jpg'
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="img-fluid rounded"
+                  src='assets/images/Carousel/img_0005.jpg'
+                  alt="Third slide"
+                />
+              </Carousel.Item>
+            </Carousel>
           </div>
         </div>
         <div className="col-md-2"></div>

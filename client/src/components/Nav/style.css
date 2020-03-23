@@ -1,0 +1,5 @@
+.cloud {  
+    background: url(./images/beautiful-cloud-background.jpg) !important;
+    background-size: cover !important;
+    border-bottom: 5px solid rgba(0,0,0,.685);
+}
