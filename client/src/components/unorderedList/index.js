@@ -1,16 +1,17 @@
-import React from 'react';
-import './style.css';
-
+import React from "react";
+import "./style.css";
 
 export function UnorderList(props) {
-    // console.log(props.key);
-    return (
-        <ul className={props.bootStrapList ? 'list-group' : ''}>
-            {props.children}
-        </ul>
-    )
+  // console.log(props.key);
+  return (
+    <ul
+      className={`${props.bootStrapList ? "list-group" : ""} ${props.classes}`}
+    >
+      {props.children}
+    </ul>
+  );
 }
 
 export function ListItem(props) {
-   return  <li>{props.children}</li>
+  return <li className={props.classes}>{props.children}</li>;
 }

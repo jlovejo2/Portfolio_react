@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  height:100%;
+  height: 100%;
 }
 
 .App-logo {
@@ -50,7 +50,7 @@
   left: 30px;
   text-align: center;
   border: 3px solid black;
-  background-color: rgba(0,128,128,.5);
+  background-color: rgba(0, 128, 128, 0.5);
   color: white;
   width: 90%;
 }
@@ -61,3 +61,7 @@
   width: 100%;
   border: 2px solid teal;
 }
+
+/* .icons {
+  margin: 15px !important;
+} */
