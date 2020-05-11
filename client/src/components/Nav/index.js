@@ -36,7 +36,7 @@ const Navbar = () => (
         drop={"right"}
         size={"sm"}
         variant="tg navbar__button"
-        title={"Professional Links"}
+        title={"More Goodies"}
       >
         <Dropdown.Item href="">Option 1</Dropdown.Item>
         <Dropdown.Item href="">Option 2</Dropdown.Item>
