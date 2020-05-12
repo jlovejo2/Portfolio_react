@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
+// import Dropdown from "react-bootstrap/Dropdown";
+// import DropdownButton from "react-bootstrap/DropdownButton";
 import { NavLink } from "react-router-dom";
 import "./style.css";
 
@@ -21,14 +21,14 @@ const Navbar = () => (
     >
       Portfolio
     </NavLink>
-    <NavLink
+    {/* <NavLink
       activeClassName="navbar__link--active"
       className="navbar__link"
       to="/contact"
     >
       Contact
-    </NavLink>
-    <div>
+    </NavLink> */}
+    {/* <div>
       <DropdownButton
         // as={ButtonGroup}
         key={"right"}
@@ -42,7 +42,7 @@ const Navbar = () => (
         <Dropdown.Item href="">Option 2</Dropdown.Item>
         <Dropdown.Item href="">Option 3</Dropdown.Item>
       </DropdownButton>
-    </div>
+    </div> */}
   </nav>
 );
 

@@ -1,0 +1,9 @@
+.contactModal {
+  /* width: 90%; */
+  background-color: rgba(33, 127, 204, 0.8) !important;
+  color: rgba(255, 255, 255);
+}
+
+#contactContainer {
+  background-color: rgba(0, 0, 0, 0.8);
+}

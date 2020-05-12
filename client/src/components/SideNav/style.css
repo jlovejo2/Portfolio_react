@@ -1,0 +1,39 @@
+#mySidenav button {
+  position: absolute; /* Position them relative to the browser window */
+  left: -80px; /* Position them outside of the screen */
+  transition: 0.3s; /* Add transition on hover */
+  padding: 5px;
+  top: 40%;
+  /* width: 200px; */
+  /* height: 150px; */
+  color: white;
+  border-radius: 0 5px 5px 0;
+  background-color: rgb(36, 182, 36);
+  /* writing-mode: vertical-rl;
+  text-orientation: mixed; */
+  vertical-align: top;
+  transform: rotate(7deg);
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -moz-transform: rotate(90deg); /* Firefox */
+  -webkit-transform: rotate(90deg);
+  text-decoration: none;
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
+  margin: 0.5em;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+#mySidenav button:hover {
+  width: 200px;
+  height: 150px;
+  left: 0; /* On mouse-over, make the elements appear as they should */
+}
+
+.vertText {
+  vertical-align: top;
+  transform: rotate(7deg);
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -moz-transform: rotate(90deg); /* Firefox */
+  -webkit-transform: rotate(90deg);
+}
