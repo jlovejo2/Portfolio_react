@@ -4,6 +4,11 @@
   color: rgba(255, 255, 255);
 }
 
-#contactContainer {
-  background-color: rgba(0, 0, 0, 0.8);
+.contactContainer {
+  background-color: rgba(75, 116, 204, 0.7);
+}
+
+.modal-title {
+  font-family: "Helvetica", sans-serif;
+  font-size: 30px;
 }

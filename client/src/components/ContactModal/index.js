@@ -46,12 +46,12 @@ function ContactModal(props) {
           onHide={props.closeContact}
           show={props.showContact}
         >
-          <Modal.Header className="contactModal" closeButton>
+          <Modal.Header className="contactContainer" closeButton>
             <Modal.Title>Contact</Modal.Title>
           </Modal.Header>
-          <Modal.Body className="contactModal">
+          <Modal.Body className="contactContainer">
             {/* <div className="row justify-content-center p-2"> */}
-            <div className="card contactModal">
+            <div className="card border-secondary">
               <div className="card-body shadow">
                 <form>
                   <Input
@@ -67,6 +67,7 @@ function ContactModal(props) {
                     onChange={handleInputChange}
                   />
                   <Input
+                    label="Subject"
                     name="subject"
                     placeholder="A brief description of why you are contacting me"
                     onChange={handleInputChange}

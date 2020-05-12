@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 export function Input(props) {
   return (
@@ -20,7 +21,7 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} className="btn btn-warning btn-md ml-4">
+    <button {...props} className="btn btn-primary btn-md ml-4">
       {props.children}
     </button>
   );
