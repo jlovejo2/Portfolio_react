@@ -2,7 +2,7 @@
   position: fixed; /* Position them relative to the browser window */
   left: -10px; /* Position them outside of the screen */
   transition: 0.3s; /*Add transition on hover*/
-  padding: 5px;
+  /* padding: 5px; */
   top: 40%;
   /* width: 200px; */
   height: 50px;
@@ -20,6 +20,7 @@
   margin: 0.5em;
   font-size: 5px;
   font-family: "Roboto", sans-serif;
+  z-index: 2;
   /* letter-spacing: 0.3em; */
   /* text-indent: 0.3em; */
   /* margin: 0.5em; */
@@ -38,12 +39,14 @@
   -webkit-transform: rotate(270deg) scale(1.5);
   transform: rotate(270deg) scale(1.5);
   left: -65px;
+  cursor: pointer;
   color: white;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   text-indent: 0.3em;
-  margin: 0.25em;
+  margin: 0.2em;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
+  z-index: 2;
   /* -ms-transform: rotate(270deg) translate(3em, 0); IE 9 */
   /* -moz-transform: rotate(270deg) translate(3em, 0); Firefox */
 

@@ -3,6 +3,7 @@ import { Container, Row } from "../components/Grid";
 import Carousel from "react-bootstrap/Carousel";
 import ContactModal from "../components/ContactModal";
 import SideNav from "../components/SideNav";
+import RootContext from "../utils/RootContext";
 
 function About() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -17,7 +18,16 @@ function About() {
 
   return (
     <Container fluid={true}>
-      <SideNav activeContact={handleContactOpen} />
+      <RootContext.Consumer>
+        {({ contactText, setContactText }) => (
+          <SideNav
+            activeContact={handleContactOpen}
+            onHoverTextDisplay={contactText}
+            changeContactText={setContactText}
+          />
+        )}
+      </RootContext.Consumer>
+
       <Row center={true}>
         <div className="content animated fadeInRight delay-1s col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
           <div className="row font-weight-bold p-2">
