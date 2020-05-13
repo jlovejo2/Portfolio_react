@@ -1,30 +1,54 @@
-#mySidenav button {
-  position: absolute; /* Position them relative to the browser window */
-  left: -80px; /* Position them outside of the screen */
-  transition: 0.3s; /* Add transition on hover */
+#mySideNav {
+  position: fixed; /* Position them relative to the browser window */
+  left: -10px; /* Position them outside of the screen */
+  transition: 0.3s; /*Add transition on hover*/
   padding: 5px;
   top: 40%;
   /* width: 200px; */
-  height: 100px;
-  color: white;
-  border-radius: 0 5px 5px 0;
-  background-color: rgb(36, 182, 36);
+  height: 50px;
+  color: blue;
+  border-radius: 5px;
+  background-color: rgb(5, 22, 180);
   /* writing-mode: vertical-rl;
   text-orientation: mixed; */
   vertical-align: top;
-  transform: rotate(7deg);
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -moz-transform: rotate(90deg); /* Firefox */
-  -webkit-transform: rotate(90deg);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
   text-decoration: none;
   letter-spacing: 0.3em;
   text-indent: 0.3em;
   margin: 0.5em;
-  font-size: 20px;
+  font-size: 5px;
   font-family: "Roboto", sans-serif;
+  /* letter-spacing: 0.3em; */
+  /* text-indent: 0.3em; */
+  /* margin: 0.5em; */
+  /* font-size: 20px; */
+  /* font-family: "Roboto", sans-serif; */
 }
 
-#mySidenav button:hover {
+#mySideNav:hover {
+  /* animation: jello 2s infinite linear; */
+  /* transform: rotate(7deg);
+  -ms-transform: rotate(270deg); /* IE 9 */
+  /* -moz-transform: rotate(270deg); Firefox */
+  /* -webkit-transform: rotate(270deg);  */
+  -ms-transform: rotate(270deg) scale(1.5); /* IE 9 */
+  -moz-transform: rotate(270deg) scale(1.5); /* Firefox */
+  -webkit-transform: rotate(270deg) scale(1.5);
+  transform: rotate(270deg) scale(1.5);
+  left: -65px;
+  color: white;
+  letter-spacing: 0.2em;
+  text-indent: 0.3em;
+  margin: 0.25em;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  /* -ms-transform: rotate(270deg) translate(3em, 0); IE 9 */
+  /* -moz-transform: rotate(270deg) translate(3em, 0); Firefox */
+
+  /* animation-duration: 2s; */
+  /* left: 0px; */
 }
 
 /* .vertText {
