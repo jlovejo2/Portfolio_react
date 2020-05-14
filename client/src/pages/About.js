@@ -7,6 +7,14 @@ import RootContext from "../utils/RootContext";
 
 function About() {
   const [contactOpen, setContactOpen] = useState(false);
+  const [cycleTechTextClass, setCycleTechTextClass] = useState(true);
+  const [rotatingText, setRotatingText] = useState([
+    "React.js",
+    "SQL",
+    "MongoDB",
+    "Node.js",
+    "JSON Web Tokens",
+  ]);
 
   function handleContactOpen() {
     setContactOpen(true);
@@ -15,6 +23,15 @@ function About() {
   function handleContactClose() {
     setContactOpen(false);
   }
+
+  function handleClassChange() {
+    if (cycleTechTextClass) setCycleTechTextClass(false);
+    else setCycleTechTextClass(true);
+  }
+
+  // function handleTechTextRotation() {
+  //   setInterval((document.getElementById('rotatingText2')) => {}, 3000);
+  // }
 
   return (
     <Container fluid={true}>
@@ -31,7 +48,28 @@ function About() {
       <Row center={true}>
         <div className="content animated fadeInRight delay-1s col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
           <div className="row font-weight-bold p-2">
-            <h3>About Me</h3>
+            <div className="col-6">
+              <h3>About Me</h3>
+            </div>
+            <div className="col-6">
+              <p class="rotatingText">
+                <a onClick={handleClassChange}>Technologies I know&hellip;</a>
+                {rotatingText.map((value, index) => {
+                  return (
+                    <span
+                      key={index}
+                      class={`${
+                        cycleTechTextClass
+                          ? "rotatingText-1 rotatingText-adjective"
+                          : "rotatingText-adjective2"
+                      }`}
+                    >
+                      {value}
+                    </span>
+                  );
+                })}
+              </p>
+            </div>
           </div>
           <div className="row p-2 align-items-end">
             <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
