@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { Container, Row } from "../components/Grid";
-import Carousel from "react-bootstrap/Carousel";
+
 import ContactModal from "../components/ContactModal";
 import SideNav from "../components/SideNav";
 import RootContext from "../utils/RootContext";
+
+import Carousel from "react-bootstrap/Carousel";
+import Jumbotron from "../components/Jumbotron/jumbotron";
 
 function About() {
   const [contactOpen, setContactOpen] = useState(false);
   const [cycleTechTextClass, setCycleTechTextClass] = useState(true);
   const [rotatingText, setRotatingText] = useState([
-    "React.js",
-    "SQL",
-    "MongoDB",
-    "Node.js",
-    "JSON Web Tokens",
+    "React.js ",
+    "SQL ",
+    "MongoDB ",
+    "Node.js ",
+    "JWTs ",
   ]);
 
   function handleContactOpen() {
@@ -46,31 +49,36 @@ function About() {
       </RootContext.Consumer>
 
       <Row center={true}>
+        <Jumbotron fluid title={"About Me"}>
+          {/* <div className="col-12"> */}
+          <p class="rotatingText">
+            <a onClick={handleClassChange}>
+              <span
+                className={`${cycleTechTextClass ? "centerMainRotate" : ""}`}
+              >
+                Technologies I know &hellip;&nbsp;{" "}
+              </span>
+              {rotatingText.map((value, index) => {
+                return (
+                  <span
+                    key={index}
+                    class={`${
+                      cycleTechTextClass
+                        ? "rotatingText-1 rotatingText-adjective"
+                        : "rotatingText-adjective2"
+                    }`}
+                  >
+                    {value}
+                  </span>
+                );
+              })}
+            </a>
+          </p>
+          {/* </div> */}
+        </Jumbotron>
+      </Row>
+      <Row center={true}>
         <div className="content animated fadeInRight delay-1s col-xs-12 col-s-12 col-md-8 col-lg-8 col-xl-8">
-          <div className="row font-weight-bold p-2">
-            <div className="col-6">
-              <h3>About Me</h3>
-            </div>
-            <div className="col-6">
-              <p class="rotatingText">
-                <a onClick={handleClassChange}>Technologies I know&hellip;</a>
-                {rotatingText.map((value, index) => {
-                  return (
-                    <span
-                      key={index}
-                      class={`${
-                        cycleTechTextClass
-                          ? "rotatingText-1 rotatingText-adjective"
-                          : "rotatingText-adjective2"
-                      }`}
-                    >
-                      {value}
-                    </span>
-                  );
-                })}
-              </p>
-            </div>
-          </div>
           <div className="row p-2 align-items-end">
             <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12">
               <img

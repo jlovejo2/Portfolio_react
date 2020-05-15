@@ -25,7 +25,7 @@ function SideNav(props) {
         {props.onHoverTextDisplay === "" ? (
           <FontAwesomeIcon
             icon={faPaperPlane}
-            style={{ color: "white", fontSize: "20px" }}
+            style={{ color: "blue", fontSize: "20px" }}
           />
         ) : (
           props.onHoverTextDisplay

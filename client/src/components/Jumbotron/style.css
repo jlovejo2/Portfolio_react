@@ -1,0 +1,10 @@
+.jumbotron {
+  color: white;
+}
+
+.mainHeadline {
+  background: url(../../images/img_0003.jpg) center center no-repeat;
+  background-size: cover;
+  height: 60%;
+  width: 100%;
+}

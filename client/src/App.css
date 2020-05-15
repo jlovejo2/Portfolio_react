@@ -3,12 +3,6 @@
   height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .content {
   background-color: rgba(192, 192, 192, 0.68);
   border: 3px solid black;
@@ -39,6 +33,7 @@
   font-size: 24px;
   text-align: center;
   font-style: italic;
+  width: 100%;
 }
 
 .rotatingText-adjective {
@@ -50,7 +45,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 0px;
+  top: 70px;
   margin-bottom: 0;
   margin-top: 30px;
   opacity: 0;
@@ -101,4 +96,21 @@
 
 .rotatingText-adjective:nth-of-type(5) {
   animation-delay: 12s;
+}
+
+@media screen and (min-width: 768px) {
+  .rotatingText-adjective {
+    position: absolute;
+    left: 460px;
+    right: 120px;
+    top: 29px;
+    margin-bottom: 0;
+  }
+  .centerMainRotate {
+    position: absolute;
+    left: 0px;
+    right: 120px;
+    top: 73px;
+    margin-bottom: 0;
+  }
 }
