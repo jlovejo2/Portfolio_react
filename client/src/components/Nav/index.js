@@ -6,6 +6,12 @@ import "./style.css";
 
 const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-dark cloud">
+    <a class="navbar-brand " href="https://github.com/jlovejo2/">
+      <img
+        className="brand-image rounded-circle"
+        src="assets/images/profile_pic.jpg"
+      ></img>
+    </a>
     <NavLink
       exact
       activeClassName="navbar__link--active"

@@ -5,7 +5,7 @@ function Footer(props) {
   return (
     <div className="fixed-bottom min-10 text-center footer">
       <div className="row">
-        <div className="d-flex col-4 justify-content-start pl-4">
+        <div className="d-flex col-4 justify-content-start">
           {props.childrenLeft}
         </div>
         <div className="col-4">Copright&copy;</div>
