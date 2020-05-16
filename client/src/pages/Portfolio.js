@@ -32,12 +32,12 @@ const Portfolio = () => {
     } else {
       if (filterValue === "tech") {
         const filterProjs = projects.filter((project) => {
-          if (project.tech.includes(search)) return project;
+          if (project.tech.toString().includes(search)) return project;
         });
         setFilteredProjects(filterProjs);
       } else {
         const filterProjs = projects.filter((project) => {
-          if (project.title.includes(search)) return project;
+          if (project.title.toString().includes(search)) return project;
         });
         setFilteredProjects(filterProjs);
       }
