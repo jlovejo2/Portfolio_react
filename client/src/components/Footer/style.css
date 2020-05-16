@@ -1,5 +1,14 @@
-.footer {
-  background-color: rgba(128, 128, 128, 0.75);
+.footer-style {
+  background-color: rgba(0, 0, 0, 0.75);
   border-top: 3px solid rgba(255, 255, 255, 0.5);
-  height: 5%;
+  height: 7%;
+  color: white;
+  /* position: fixed;
+  bottom: 0px; */
+}
+
+@media only screen and (max-width: 1020px) {
+  .childLeft {
+    display: none;
+  }
 }

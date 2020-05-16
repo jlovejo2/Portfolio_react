@@ -3,13 +3,15 @@ import "./style.css";
 
 function Footer(props) {
   return (
-    <div className="fixed-bottom min-10 text-center footer">
-      <div className="row">
-        <div className="d-flex col-4 justify-content-start">
+    <div className="fixed-bottom min-10 text-center footer-style">
+      <div className="row align-items-center">
+        <div className="d-flex col-5 justify-content-start childLeft">
           {props.childrenLeft}
         </div>
-        <div className="col-4">Copright&copy;</div>
-        <div className="col-4 justify-content-end pr-4">
+        <div className="d-flex col-2 justify-content-center p-2">
+          <p>Copright&copy;</p>
+        </div>
+        <div className="d-flex col-5 justify-content-end">
           {props.childrenRight}
         </div>
       </div>

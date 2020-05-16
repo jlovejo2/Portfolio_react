@@ -9,7 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(rgb(6, 22, 168), rgba(128, 128, 128));
+  background: rgb(6, 22, 168) linear-gradient(rgb(6, 22, 168), rgba(0, 0, 0));
   padding-bottom: 30px;
 }
 
@@ -20,5 +20,5 @@ code {
 
 p {
   font-family: "Helvetica", "sans-serif";
-  font-size: 18px;
+  font-size: 17px;
 }

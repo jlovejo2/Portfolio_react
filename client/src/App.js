@@ -36,50 +36,46 @@ function App() {
         </div>
         <Footer
           childrenLeft={
-            <div className="d-flex">
-              <UnorderList
-                bootStrapList={true}
-                classes={"list-group-horizontal justify-content-center"}
-              >
-                <ListItem>
-                  <p>
-                    <FontAwesomeIcon
-                      icon={faPhone}
-                      size={"1x"}
-                      color={"black"}
-                    />
-                    :&nbsp; 630 740-3285
-                  </p>
-                </ListItem>
-                <ListItem>
-                  <p>
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      size={"1x"}
-                      color={"black"}
-                    />
-                    :&nbsp; james.lovejoy2@gmail.com
-                  </p>
-                </ListItem>
-              </UnorderList>
-            </div>
+            <UnorderList
+              bootStrapList={true}
+              classes={"list-group-horizontal justify-content-start pl-2"}
+            >
+              <ListItem>
+                <p>
+                  <FontAwesomeIcon icon={faPhone} size={"1x"} color={"white"} />
+                  :&nbsp; 630 740-3285
+                </p>
+              </ListItem>
+              <ListItem>
+                <p>
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    size={"1x"}
+                    color={"white"}
+                  />
+                  :&nbsp; james.lovejoy2@gmail.com
+                </p>
+              </ListItem>
+            </UnorderList>
           }
           childrenRight={
-            <div className="d-flex">
-              <UnorderList
-                bootStrapList={true}
-                classes={"list-group-horizontal justify-content-center"}
-              >
-                <ListItem classes="mr-2 ">
+            <UnorderList
+              bootStrapList={true}
+              classes={"list-group-horizontal justify-content-end pr-2"}
+            >
+              <ListItem classes="mr-2 ">
+                <p>
                   <a href="https://github.com/jlovejo2/">
                     <FontAwesomeIcon
                       icon={faGithubSquare}
                       size={"2x"}
-                      color={"black"}
+                      color={"white"}
                     />
                   </a>
-                </ListItem>
-                <ListItem classes="mr-2">
+                </p>
+              </ListItem>
+              <ListItem classes="mr-2">
+                <p>
                   <a href="https://www.linkedin.com/in/james-lovejoy-b414307a/">
                     <FontAwesomeIcon
                       icon={faLinkedin}
@@ -87,8 +83,10 @@ function App() {
                       color={"blue"}
                     />
                   </a>
-                </ListItem>
-                <ListItem classes="">
+                </p>
+              </ListItem>
+              <ListItem classes="">
+                <p>
                   <a href="assets/James_Lovejoy_FullStack_Resume.pdf">
                     <FontAwesomeIcon
                       icon={faFilePdf}
@@ -96,9 +94,9 @@ function App() {
                       color={"red"}
                     />
                   </a>
-                </ListItem>
-              </UnorderList>
-            </div>
+                </p>
+              </ListItem>
+            </UnorderList>
           }
         />
       </RootContext.Provider>
