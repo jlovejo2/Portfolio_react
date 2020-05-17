@@ -5,7 +5,7 @@ import ContactModal from "../components/ContactModal";
 import SideNav from "../components/SideNav";
 import RootContext from "../utils/RootContext";
 
-import Carousel from "react-bootstrap/Carousel";
+// import Carousel from "react-bootstrap/Carousel";
 import Jumbotron from "../components/Jumbotron/jumbotron";
 
 function About() {
@@ -13,10 +13,15 @@ function About() {
   const [cycleTechTextClass, setCycleTechTextClass] = useState(true);
   const [rotatingText, setRotatingText] = useState([
     "React.js ",
+    "Redux",
     "SQL ",
     "MongoDB ",
     "Node.js ",
     "JWTs ",
+    // "Bootstrap",
+    // "Bulma",
+    // "Materialize",
+    // "Material-ui",
   ]);
 
   function handleContactOpen() {

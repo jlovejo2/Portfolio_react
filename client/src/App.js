@@ -16,6 +16,15 @@ import "./App.css";
 
 function App() {
   const [contactText, setContactText] = useState("");
+  // const [contactOpen, setContactOpen] = useState(false);
+
+  // function handleContactOpen() {
+  //   setContactOpen(true);
+  // }
+
+  // function handleContactClose() {
+  //   setContactOpen(false);
+  // }
 
   return (
     <Router>
@@ -40,12 +49,12 @@ function App() {
               bootStrapList={true}
               classes={"list-group-horizontal justify-content-start pl-2"}
             >
-              <ListItem>
+              {/* <ListItem>
                 <p>
                   <FontAwesomeIcon icon={faPhone} size={"1x"} color={"white"} />
                   :&nbsp; 630 740-3285
                 </p>
-              </ListItem>
+              </ListItem>*/}
               <ListItem>
                 <p>
                   <FontAwesomeIcon
