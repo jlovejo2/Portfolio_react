@@ -11,24 +11,32 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ContactModal from "./components/ContactModal";
 import { UnorderList, ListItem } from "./components/unorderedList";
 import "./App.css";
 
 function App() {
   const [contactText, setContactText] = useState("");
-  // const [contactOpen, setContactOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
-  // function handleContactOpen() {
-  //   setContactOpen(true);
-  // }
+  function handleContactOpen() {
+    setContactOpen(true);
+  }
 
-  // function handleContactClose() {
-  //   setContactOpen(false);
-  // }
+  function handleContactClose() {
+    setContactOpen(false);
+  }
 
   return (
     <Router>
-      <RootContext.Provider value={{ contactText, setContactText }}>
+      <RootContext.Provider
+        value={{
+          contactText,
+          setContactText,
+          handleContactClose,
+          handleContactOpen,
+        }}
+      >
         <div className="App">
           <Nav />
           <Switch>
@@ -56,7 +64,7 @@ function App() {
                 </p>
               </ListItem>*/}
               <ListItem>
-                <p>
+                <p onClick={handleContactOpen}>
                   <FontAwesomeIcon
                     icon={faEnvelope}
                     size={"1x"}
@@ -107,6 +115,11 @@ function App() {
               </ListItem>
             </UnorderList>
           }
+        />
+        <ContactModal
+          // modalClasses={"contactModal"}
+          showContact={contactOpen}
+          closeContact={handleContactClose}
         />
       </RootContext.Provider>
     </Router>

@@ -24,13 +24,13 @@ function About() {
     // "Material-ui",
   ]);
 
-  function handleContactOpen() {
-    setContactOpen(true);
-  }
+  // function handleContactOpen() {
+  //   setContactOpen(true);
+  // }
 
-  function handleContactClose() {
-    setContactOpen(false);
-  }
+  // function handleContactClose() {
+  //   setContactOpen(false);
+  // }
 
   function handleClassChange() {
     if (cycleTechTextClass) setCycleTechTextClass(false);
@@ -44,7 +44,7 @@ function About() {
   return (
     <Container fluid={true}>
       <RootContext.Consumer>
-        {({ contactText, setContactText }) => (
+        {({ contactText, setContactText, handleContactOpen }) => (
           <SideNav
             activeContact={handleContactOpen}
             onHoverTextDisplay={contactText}
@@ -200,11 +200,7 @@ function About() {
             </Carousel>
           </div>
         </div> */}
-      <ContactModal
-        // modalClasses={"contactModal"}
-        showContact={contactOpen}
-        closeContact={handleContactClose}
-      />
+
       {/* </Row> */}
     </Container>
   );
