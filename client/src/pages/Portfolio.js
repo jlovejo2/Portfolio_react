@@ -30,14 +30,16 @@ const Portfolio = () => {
     if (!search) {
       setFilteredProjects(projects);
     } else {
-      if (filterValue === "tech") {
+      if (filterValue === "title") {
+        console.log("searching title");
         const filterProjs = projects.filter((project) => {
-          if (project.tech.toString().includes(search)) return project;
+          if (project.title.toString().includes(search)) return project;
         });
         setFilteredProjects(filterProjs);
       } else {
+        console.log("searching tech");
         const filterProjs = projects.filter((project) => {
-          if (project.title.toString().includes(search)) return project;
+          if (project.tech.toString().includes(search)) return project;
         });
         setFilteredProjects(filterProjs);
       }
@@ -82,81 +84,96 @@ const Portfolio = () => {
       <Row center={true}>
         <div className="content animated fadeInRight delay-1s col-lg-10">
           <div className="row justify-content-center font-weight-bold w-100 p-4 mt-4">
-            <h3>Portfolio</h3>
-            <SearchTable
-              selectSearch={filterValue}
-              selectChange={handleSelectChange}
-              filterFunc={handleSearchChange}
-            />
+            <div className="col-10">
+              <h3>Portfolio</h3>
+              <p>
+                Below is a list of my projects and some info about them. There
+                is a search bar and drop-down menu that allow the table to be
+                filtered.{" "}
+              </p>
+            </div>
           </div>
-          <div className="table-responsive">
-            <table className="table">
-              <thead className="thead-dark">
-                <tr>
-                  <th scope="col" style={{ width: "5%" }}>
-                    #
-                  </th>
-                  <th scope="col" style={{ width: "5%" }}>
-                    Title
-                  </th>
-                  <th
-                    scope="col"
-                    style={{
-                      width: "45%",
-                    }} /*onClick={e => this.onSortString(e, 'firstName', this.state.ascKey)}*/
-                  >
-                    Image
-                  </th>
-                  {/* <th scope='col' style={{ width: '20%' }}>Functional Preview</th> */}
-                  <th scope="col" style={{ width: "5%" }}>
-                    Deployed App Link
-                  </th>
-                  <th
-                    scope="col"
-                    style={{
-                      width: "35%",
-                    }} /*onClick={e => this.onSortNumber(e, 'yearsWithCompany', this.state.ascKey)}*/
-                  >
-                    Description
-                  </th>
-                  <th scope="col" style={{ width: "5%" }}>
-                    Technologies Used
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredProjects.map((value, index) => {
-                  return (
-                    <TableRow
-                      scope="row"
-                      key={index}
-                      num={index}
-                      animate={animateGif}
-                      image={value.imgLink}
-                      gifLink={value.functionalPreview}
-                      appLink={value.appLink}
-                      title={value.title}
-                      startAnimate={handleAnimate}
-                      stopAnimate={endAnimate}
-                      desc={value.description}
+          <div className="row align-items-center p-2 mb-2">
+            <div className="col">
+              {/* <div className="col"> */}
+              <SearchTable
+                selectSearch={filterValue}
+                selectChange={handleSelectChange}
+                filterFunc={handleSearchChange}
+              />
+              {/* </div> */}
+            </div>
+          </div>
+          <div className="row">
+            <div className="table-responsive">
+              <table className="table">
+                <thead className="thead-dark">
+                  <tr>
+                    <th scope="col" style={{ width: "5%" }}>
+                      #
+                    </th>
+                    <th scope="col" style={{ width: "5%" }}>
+                      Title
+                    </th>
+                    <th
+                      scope="col"
+                      style={{
+                        width: "45%",
+                      }} /*onClick={e => this.onSortString(e, 'firstName', this.state.ascKey)}*/
                     >
-                      <UnorderList>
-                        {value.tech.map((value, index) => {
-                          return <ListItem key={index}>{value}</ListItem>;
-                        })}
-                      </UnorderList>
-                    </TableRow>
-                  );
-                })}
-              </tbody>
-            </table>
+                      Image
+                    </th>
+                    {/* <th scope='col' style={{ width: '20%' }}>Functional Preview</th> */}
+                    <th scope="col" style={{ width: "5%" }}>
+                      Deployed App Link
+                    </th>
+                    <th
+                      scope="col"
+                      style={{
+                        width: "35%",
+                      }} /*onClick={e => this.onSortNumber(e, 'yearsWithCompany', this.state.ascKey)}*/
+                    >
+                      Description
+                    </th>
+                    <th scope="col" style={{ width: "5%" }}>
+                      Technologies Used
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredProjects.map((value, index) => {
+                    return (
+                      <TableRow
+                        scope="row"
+                        key={index}
+                        num={index}
+                        animate={animateGif}
+                        image={value.imgLink}
+                        gifLink={value.functionalPreview}
+                        appLink={value.appLink}
+                        title={value.title}
+                        startAnimate={handleAnimate}
+                        stopAnimate={endAnimate}
+                        desc={value.description}
+                      >
+                        <UnorderList>
+                          {value.tech.map((value, index) => {
+                            return <ListItem key={index}>{value}</ListItem>;
+                          })}
+                        </UnorderList>
+                      </TableRow>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
           </div>
+          <ContactModal
+            // modalClasses={"contactModal"}
+            showContact={contactOpen}
+            closeContact={handleContactClose}
+          />
         </div>
-        <ContactModal
-          // modalClasses={"contactModal"}
-          showContact={contactOpen}
-          closeContact={handleContactClose}
-        />
       </Row>
     </Container>
   );

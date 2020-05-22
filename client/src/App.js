@@ -4,7 +4,7 @@ import RootContext from "./utils/RootContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFilePdf, faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+// import { faPhone } from "@fortawesome/free-solid-svg-icons";
 // import Home from './pages/Home';
 import Contact from "./pages/Contact";
 import Portfolio from "./pages/Portfolio";
