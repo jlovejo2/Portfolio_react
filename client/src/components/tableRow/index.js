@@ -1,5 +1,6 @@
 import React from "react";
 import Tooltip from "../Tooltip/tooltip";
+import GifModal from "../GifModal/gifModal";
 import "./style.css";
 
 function tableRow(props) {
@@ -9,15 +10,18 @@ function tableRow(props) {
       <th scope={props.scope}>{props.num + 1}</th>
       <td>{props.title}</td>
       <td onMouseEnter={props.startAnimate} onMouseLeave={props.startAnimate}>
-        <img
-          className="img-thumbnail image-cell"
-          alt="Not Available"
-          src={props.animate ? `${props.gifLink}` : `${props.image}`}
-        ></img>
+        <button onClick={props.handleOpenGif}>
+          <img
+            className="img-thumbnail image-cell"
+            alt="Not Available"
+            src={props.image}
+          ></img>
+        </button>
         <Tooltip
           makeVisible={props.tooltipChange}
           tooltipText={props.tooltipText}
-        ></Tooltip>
+        />
+        <GifModal imageLink={props.gifLink} showGIF={props.openGif} />
       </td>
       <td>
         <a href={props.appLink}>{props.appLink}</a>

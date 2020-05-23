@@ -16,6 +16,7 @@ const Portfolio = () => {
   const [animateGif, setAnimateGif] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [imageTooltip, setImageTooltip] = useState(false);
+  const [gifOpen, setGifOpen] = useState(false);
 
   function handleContactOpen() {
     setContactOpen(true);
@@ -80,6 +81,10 @@ const Portfolio = () => {
     } else {
       setImageTooltip(true);
     }
+  };
+
+  const handleGifModal = (event) => {
+    setGifOpen(true);
   };
 
   return (
@@ -170,6 +175,8 @@ const Portfolio = () => {
                         desc={value.description}
                         tooltipChange={imageTooltip}
                         tooltipText={"Click to see a GIF"}
+                        handleOpenGif={handleGifModal}
+                        openGif={gifOpen}
                       >
                         <UnorderList>
                           {value.tech.map((value, index) => {
