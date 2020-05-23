@@ -15,6 +15,7 @@ const Portfolio = () => {
   const [search, setSearch] = useState("");
   const [animateGif, setAnimateGif] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const [imageTooltip, setImageTooltip] = useState(false);
 
   function handleContactOpen() {
     setContactOpen(true);
@@ -44,7 +45,7 @@ const Portfolio = () => {
         setFilteredProjects(filterProjs);
       }
     }
-  }, [search]);
+  }, [search, imageTooltip]);
 
   const handleSearchChange = (event) => {
     console.log("search change");
@@ -63,11 +64,22 @@ const Portfolio = () => {
 
   const handleAnimate = (event) => {
     console.log(event.target);
+    console.log(event.target.value);
     setAnimateGif(true);
   };
 
   const endAnimate = (event) => {
     setAnimateGif(false);
+  };
+
+  const handleGifTooltip = (event) => {
+    console.log(imageTooltip);
+
+    if (imageTooltip) {
+      setImageTooltip(false);
+    } else {
+      setImageTooltip(true);
+    }
   };
 
   return (
@@ -152,14 +164,18 @@ const Portfolio = () => {
                         gifLink={value.functionalPreview}
                         appLink={value.appLink}
                         title={value.title}
-                        startAnimate={handleAnimate}
+                        // startAnimate={handleAnimate}
+                        startAnimate={handleGifTooltip}
                         stopAnimate={endAnimate}
                         desc={value.description}
+                        tooltipChange={imageTooltip}
+                        tooltipText={"Click to see a GIF"}
                       >
                         <UnorderList>
                           {value.tech.map((value, index) => {
                             return <ListItem key={index}>{value}</ListItem>;
                           })}
+                          }{" "}
                         </UnorderList>
                       </TableRow>
                     );
