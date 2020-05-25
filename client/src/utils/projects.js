@@ -20,10 +20,10 @@ const portfolioObject = [
     ],
   },
   {
-    imgLink: "assets/images/nutridish.png",
+    imgLink: "./assets/images/nutridish.png",
     appLink: "https://nutridish.herokuapp.com",
     title: "Nutridish",
-    functionalPreview: "assets/gifs/nutridish.gif",
+    functionalPreview: "./assets/gifs/nutridish.gif",
     description:
       "The purpose of this app is for the user to either login or create an account.  Once that has been done they can search for recipes based on nutrient and diet selection.  These recipes can be saved in their account and referenced for later use.",
     tech: [

@@ -31,6 +31,7 @@ const Portfolio = () => {
   useEffect(() => {
     console.log(filterValue);
     console.log(search);
+    console.log(currentGif);
     if (!search) {
       setFilteredProjects(projects);
     } else {
@@ -82,10 +83,11 @@ const Portfolio = () => {
     if (imageTooltip) {
       setImageTooltip(false);
     } else {
+      const linkForGif = event.target.getAttribute("data-link");
+      setCurrentGif(linkForGif);
       setImageTooltip(true);
     }
 
-    setCurrentGif(event.target.getAttribute("data-link"));
     console.log("currentGif value", currentGif);
   };
 
