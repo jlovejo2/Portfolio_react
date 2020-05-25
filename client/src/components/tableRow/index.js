@@ -9,19 +9,26 @@ function tableRow(props) {
     <tr>
       <th scope={props.scope}>{props.num + 1}</th>
       <td>{props.title}</td>
-      <td onMouseEnter={props.startAnimate} onMouseLeave={props.startAnimate}>
-        <button onClick={props.handleOpenGif}>
-          <img
-            className="img-thumbnail image-cell"
-            alt="Not Available"
-            src={props.image}
-          ></img>
-        </button>
+      <td
+        onMouseEnter={props.startAnimate}
+        onClick={props.handleOpenGif}
+        data-link={props.gifLink}
+        onMouseLeave={props.startAnimate}
+      >
+        <img
+          className="img-thumbnail image-cell"
+          alt="Not Available"
+          src={props.image}
+        ></img>
         <Tooltip
           makeVisible={props.tooltipChange}
           tooltipText={props.tooltipText}
         />
-        <GifModal imageLink={props.gifLink} showGIF={props.openGif} />
+        {/* <GifModal
+          gifLink={props.gifLink}
+          showGIF={props.openGif}
+          closeGif={props.closeGif}
+        /> */}
       </td>
       <td>
         <a href={props.appLink}>{props.appLink}</a>

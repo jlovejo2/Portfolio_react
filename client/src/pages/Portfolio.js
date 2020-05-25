@@ -17,6 +17,7 @@ const Portfolio = () => {
   const [contactOpen, setContactOpen] = useState(false);
   const [imageTooltip, setImageTooltip] = useState(false);
   const [gifOpen, setGifOpen] = useState(false);
+  const [currentGif, setCurrentGif] = useState("");
 
   function handleContactOpen() {
     setContactOpen(true);
@@ -46,7 +47,7 @@ const Portfolio = () => {
         setFilteredProjects(filterProjs);
       }
     }
-  }, [search, imageTooltip]);
+  }, [search]);
 
   const handleSearchChange = (event) => {
     console.log("search change");
@@ -74,17 +75,28 @@ const Portfolio = () => {
   };
 
   const handleGifTooltip = (event) => {
-    console.log(imageTooltip);
+    // console.log(link);
+    // console.log(event.target);
 
     if (imageTooltip) {
       setImageTooltip(false);
     } else {
       setImageTooltip(true);
     }
+
+    setCurrentGif(event.target.getAttribute("data-link"));
+    console.log(currentGif);
   };
 
   const handleGifModal = (event) => {
-    setGifOpen(true);
+    console.log(currentGif);
+
+    setCurrentGif(event.target.getAttribute("data-link"));
+  };
+
+  const handleCurrentProjectGif = (projectGIF) => {
+    setCurrentGif(projectGIF);
+    console.log(currentGif);
   };
 
   return (
@@ -177,6 +189,7 @@ const Portfolio = () => {
                         tooltipText={"Click to see a GIF"}
                         handleOpenGif={handleGifModal}
                         openGif={gifOpen}
+                        closeGif={handleGifModal}
                       >
                         <UnorderList>
                           {value.tech.map((value, index) => {

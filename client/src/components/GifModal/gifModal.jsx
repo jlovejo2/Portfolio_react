@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 
 function GifModal(props) {
   return (
-    <Modal show={props.showGIF}>
+    <Modal show={props.showGIF} onHide={props.closeGif}>
       <Modal.Header>
         <Modal.Title>Play GIF</Modal.Title>
       </Modal.Header>
@@ -11,7 +11,7 @@ function GifModal(props) {
         <img
           className="img-responsive"
           alt="Not Available"
-          src={props.imageLink}
+          src={props.gifLink}
         ></img>
       </Modal.Body>
     </Modal>
