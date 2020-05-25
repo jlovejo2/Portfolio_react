@@ -11,8 +11,9 @@ function GifModal(props) {
         <img
           className="img-responsive"
           alt="Not Available"
-          src={props.gifLink}
+          src={props.projectAnimation}
         ></img>
+        <p>{props.gifLink}</p>
       </Modal.Body>
     </Modal>
   );

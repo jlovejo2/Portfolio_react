@@ -6,6 +6,7 @@ import SearchTable from "../components/searchTable";
 import portfolioObject from "../utils/projects";
 import SideNav from "../components/SideNav";
 import ContactModal from "../components/ContactModal";
+import GifModal from "../components/GifModal/gifModal";
 import RootContext from "../utils/RootContext";
 
 const Portfolio = () => {
@@ -85,13 +86,22 @@ const Portfolio = () => {
     }
 
     setCurrentGif(event.target.getAttribute("data-link"));
-    console.log(currentGif);
+    console.log("currentGif value", currentGif);
   };
 
-  const handleGifModal = (event) => {
-    console.log(currentGif);
+  const handleGifModalOpen = (event) => {
+    console.log("Value of Gif before open", currentGif);
 
-    setCurrentGif(event.target.getAttribute("data-link"));
+    setGifOpen(true);
+    // if (gifOpen) {
+    //   console.log("true", currentGif);
+    // } else if (!gifOpen) {
+    //   console.log("false", currentGif);
+    // }
+  };
+
+  const handleGifModalClose = (event) => {
+    setGifOpen(false);
   };
 
   const handleCurrentProjectGif = (projectGIF) => {
@@ -187,9 +197,9 @@ const Portfolio = () => {
                         desc={value.description}
                         tooltipChange={imageTooltip}
                         tooltipText={"Click to see a GIF"}
-                        handleOpenGif={handleGifModal}
-                        openGif={gifOpen}
-                        closeGif={handleGifModal}
+                        handleOpenGif={handleGifModalOpen}
+                        // openGif={gifOpen}
+                        // closeGif={handleGifModal}
                       >
                         <UnorderList>
                           {value.tech.map((value, index) => {
@@ -208,6 +218,11 @@ const Portfolio = () => {
             // modalClasses={"contactModal"}
             showContact={contactOpen}
             closeContact={handleContactClose}
+          />
+          <GifModal
+            projectAnimation={currentGif}
+            showGIF={gifOpen}
+            closeGif={handleGifModalClose}
           />
         </div>
       </Row>

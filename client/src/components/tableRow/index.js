@@ -24,11 +24,6 @@ function tableRow(props) {
           makeVisible={props.tooltipChange}
           tooltipText={props.tooltipText}
         />
-        {/* <GifModal
-          gifLink={props.gifLink}
-          showGIF={props.openGif}
-          closeGif={props.closeGif}
-        /> */}
       </td>
       <td>
         <a href={props.appLink}>{props.appLink}</a>
