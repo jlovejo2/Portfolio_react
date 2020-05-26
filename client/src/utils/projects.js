@@ -55,7 +55,12 @@ const portfolioObject = [
     description:
       "The purpose of this app is to search for books, games, and movies based on the same keyword or title.",
     tech: [
-      "JavaScript, jQuery, Materialize, HTML, OMDB API, Google Books API, RAWG API",
+      "JavaScript",
+      "jQuery",
+      "Materialize",
+      "OMDB API",
+      "Google Books API",
+      "RAWG API",
     ],
   },
   {

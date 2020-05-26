@@ -179,7 +179,6 @@ const Portfolio = () => {
                           {value.tech.map((value, index) => {
                             return <ListItem key={index}>{value}</ListItem>;
                           })}
-                          }{" "}
                         </UnorderList>
                       </TableRow>
                     );
