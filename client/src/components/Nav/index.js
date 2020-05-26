@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import Dropdown from "react-bootstrap/Dropdown";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 import { NavLink } from "react-router-dom";
@@ -9,6 +9,7 @@ const Navbar = () => (
     <a className="navbar-brand " href="https://github.com/jlovejo2/">
       <img
         className="brand-image rounded-circle"
+        alt="Profile"
         src="assets/images/profile_pic.jpg"
       ></img>
     </a>

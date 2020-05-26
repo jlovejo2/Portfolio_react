@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row } from "../components/Grid";
 
-import ContactModal from "../components/ContactModal";
+// import ContactModal from "../components/ContactModal";
 import SideNav from "../components/SideNav";
 import RootContext from "../utils/RootContext";
 
@@ -9,9 +9,9 @@ import RootContext from "../utils/RootContext";
 import Jumbotron from "../components/Jumbotron/jumbotron";
 
 function About() {
-  const [contactOpen, setContactOpen] = useState(false);
+  // const [contactOpen, setContactOpen] = useState(false);
   const [cycleTechTextClass, setCycleTechTextClass] = useState(true);
-  const [rotatingText, setRotatingText] = useState([
+  const [rotatingText /*setRotatingText*/] = useState([
     "React.js ",
     "Redux",
     "SQL ",
@@ -56,8 +56,8 @@ function About() {
       <Row center={true}>
         <Jumbotron fluid title={"About Me"}>
           {/* <div className="col-12"> */}
-          <p class="rotatingText">
-            <a onClick={handleClassChange}>
+          <p className="rotatingText">
+            <button onClick={handleClassChange} id="rotatingTextButton">
               <span
                 className={`${cycleTechTextClass ? "centerMainRotate" : ""}`}
               >
@@ -67,7 +67,7 @@ function About() {
                 return (
                   <span
                     key={index}
-                    class={`${
+                    className={`${
                       cycleTechTextClass
                         ? "rotatingText-1 rotatingText-adjective"
                         : "rotatingText-adjective2"
@@ -77,7 +77,7 @@ function About() {
                   </span>
                 );
               })}
-            </a>
+            </button>
           </p>
           {/* </div> */}
         </Jumbotron>
@@ -89,15 +89,15 @@ function About() {
               <div className="card-body">
                 <div className="row text-wrap">
                   <div className="col-lg-4 col-md-12 p-3">
-                    <div class="card">
+                    <div className="card">
                       <img
                         id="me"
                         className="img-fluid float-left"
                         src="assets/images/IMG_5965.JPG"
                         alt="This is me"
                       ></img>
-                      <div class="card-body">
-                        <p class="card-text text-secondary">
+                      <div className="card-body">
+                        <p className="card-text text-secondary">
                           Me repeling after setting a rock-climbing route in
                           Dragoon Mts in souther Arizona.
                         </p>

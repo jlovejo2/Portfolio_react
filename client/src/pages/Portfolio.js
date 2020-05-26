@@ -11,10 +11,9 @@ import RootContext from "../utils/RootContext";
 
 const Portfolio = () => {
   const [filterValue, setFilterValue] = useState("");
-  const [projects, setProjects] = useState(portfolioObject);
+  const [projects /*setProjects*/] = useState(portfolioObject);
   const [filteredProjects, setFilteredProjects] = useState(portfolioObject);
   const [search, setSearch] = useState("");
-  const [animateGif, setAnimateGif] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   const [imageTooltip, setImageTooltip] = useState(false);
   const [gifOpen, setGifOpen] = useState(false);
@@ -66,20 +65,7 @@ const Portfolio = () => {
     console.log(filterValue);
   };
 
-  const handleAnimate = (event) => {
-    console.log(event.target);
-    console.log(event.target.value);
-    setAnimateGif(true);
-  };
-
-  const endAnimate = (event) => {
-    setAnimateGif(false);
-  };
-
   const handleGifTooltipOpen = (event) => {
-    // console.log(link);
-    // console.log(event.target);
-
     const projectIndex = event.target.getAttribute("data-projIndex");
     setCurrentProject(projects[projectIndex]);
     setImageTooltip(true);
@@ -120,7 +106,7 @@ const Portfolio = () => {
               <p>
                 Below is a list of my projects and some info about them. There
                 is a search bar and drop-down menu that allow the table to be
-                filtered.{" "}
+                filtered.
               </p>
             </div>
           </div>
@@ -178,20 +164,16 @@ const Portfolio = () => {
                         scope="row"
                         key={index}
                         num={index}
-                        animate={animateGif}
                         image={value.imgLink}
                         gifLink={value.functionalPreview}
                         appLink={value.appLink}
                         title={value.title}
-                        // startAnimate={handleAnimate}
                         startAnimate={handleGifTooltipOpen}
                         stopAnimate={handleGifTooltipClose}
                         desc={value.description}
                         tooltipChange={imageTooltip}
                         tooltipText={"Click to see a GIF"}
                         handleOpenGif={handleGifModalOpen}
-                        // openGif={gifOpen}
-                        // closeGif={handleGifModal}
                       >
                         <UnorderList>
                           {value.tech.map((value, index) => {

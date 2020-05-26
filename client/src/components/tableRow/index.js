@@ -1,6 +1,5 @@
 import React from "react";
 import Tooltip from "../Tooltip/tooltip";
-import GifModal from "../GifModal/gifModal";
 import "./style.css";
 
 function tableRow(props) {
