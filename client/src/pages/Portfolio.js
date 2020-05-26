@@ -18,7 +18,7 @@ const Portfolio = () => {
   const [contactOpen, setContactOpen] = useState(false);
   const [imageTooltip, setImageTooltip] = useState(false);
   const [gifOpen, setGifOpen] = useState(false);
-  const [currentGif, setCurrentGif] = useState("");
+  const [currentProject, setCurrentProject] = useState(portfolioObject[0]);
 
   function handleContactOpen() {
     setContactOpen(true);
@@ -31,7 +31,7 @@ const Portfolio = () => {
   useEffect(() => {
     console.log(filterValue);
     console.log(search);
-    console.log(currentGif);
+
     if (!search) {
       setFilteredProjects(projects);
     } else {
@@ -76,39 +76,29 @@ const Portfolio = () => {
     setAnimateGif(false);
   };
 
-  const handleGifTooltip = (event) => {
+  const handleGifTooltipOpen = (event) => {
     // console.log(link);
     // console.log(event.target);
 
-    if (imageTooltip) {
-      setImageTooltip(false);
-    } else {
-      const linkForGif = event.target.getAttribute("data-link");
-      setCurrentGif(linkForGif);
-      setImageTooltip(true);
-    }
+    const projectIndex = event.target.getAttribute("data-projIndex");
+    setCurrentProject(projects[projectIndex]);
+    setImageTooltip(true);
 
-    console.log("currentGif value", currentGif);
+    console.log("currentProject value", currentProject);
+  };
+
+  const handleGifTooltipClose = (event) => {
+    setImageTooltip(false);
   };
 
   const handleGifModalOpen = (event) => {
-    console.log("Value of Gif before open", currentGif);
+    console.log("Value of Gif before open", currentProject);
 
     setGifOpen(true);
-    // if (gifOpen) {
-    //   console.log("true", currentGif);
-    // } else if (!gifOpen) {
-    //   console.log("false", currentGif);
-    // }
   };
 
   const handleGifModalClose = (event) => {
     setGifOpen(false);
-  };
-
-  const handleCurrentProjectGif = (projectGIF) => {
-    setCurrentGif(projectGIF);
-    console.log(currentGif);
   };
 
   return (
@@ -194,8 +184,8 @@ const Portfolio = () => {
                         appLink={value.appLink}
                         title={value.title}
                         // startAnimate={handleAnimate}
-                        startAnimate={handleGifTooltip}
-                        stopAnimate={endAnimate}
+                        startAnimate={handleGifTooltipOpen}
+                        stopAnimate={handleGifTooltipClose}
                         desc={value.description}
                         tooltipChange={imageTooltip}
                         tooltipText={"Click to see a GIF"}
@@ -222,7 +212,7 @@ const Portfolio = () => {
             closeContact={handleContactClose}
           />
           <GifModal
-            projectAnimation={currentGif}
+            project={currentProject}
             showGIF={gifOpen}
             closeGif={handleGifModalClose}
           />

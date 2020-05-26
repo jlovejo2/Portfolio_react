@@ -12,8 +12,11 @@ function tableRow(props) {
       <td
         onMouseEnter={props.startAnimate}
         onClick={props.handleOpenGif}
-        data-link={props.gifLink}
-        onMouseLeave={props.startAnimate}
+        // data-link={props.gifLink}
+        // data-desc={props.desc}
+        // data-title={props.title}
+        data-projIndex={props.num}
+        onMouseLeave={props.stopAnimate}
       >
         <img
           className="img-thumbnail image-cell"
