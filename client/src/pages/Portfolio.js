@@ -126,13 +126,14 @@ const Portfolio = () => {
               <table className="table">
                 <thead className="thead-dark">
                   <tr>
-                    <th scope="col" style={{ width: "5%" }}>
+                    {/* <th scope="col" style={{ width: "5%" }}>
                       #
-                    </th>
+                    </th> */}
                     <th scope="col" style={{ width: "5%" }}>
                       Title
                     </th>
                     <th
+                      className="d-none d-lg-table-cell"
                       scope="col"
                       style={{
                         width: "45%",
@@ -141,10 +142,15 @@ const Portfolio = () => {
                       Image
                     </th>
                     {/* <th scope='col' style={{ width: '20%' }}>Functional Preview</th> */}
-                    <th scope="col" style={{ width: "5%" }}>
+                    <th
+                      className="d-md-none"
+                      scope="col"
+                      style={{ width: "5%" }}
+                    >
                       Deployed App Link
                     </th>
                     <th
+                      className="d-none d-lg-table-cell"
                       scope="col"
                       style={{
                         width: "35%",

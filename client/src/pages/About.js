@@ -111,7 +111,7 @@ function About() {
                       Webdevelopment Coding bootcamp in April and haven't
                       stopped learning since. I find coding to be a great outlet
                       and way to solve problems everday. To quote the great
-                      Vanilla Ice
+                      Vanilla Ice &nbsp;
                       <a
                         href="https://www.youtube.com/watch?v=rog8ou-ZepE"
                         target="_blank"

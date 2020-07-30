@@ -6,9 +6,10 @@ function tableRow(props) {
   // console.log(props.key);
   return (
     <tr>
-      <th scope={props.scope}>{props.num + 1}</th>
+      {/* <th scope={props.scope}>{props.num + 1}</th> */}
       <td>{props.title}</td>
       <td
+        className="d-none d-lg-table-cell"
         onMouseEnter={props.startAnimate}
         onClick={props.handleOpenGif}
         // data-link={props.gifLink}
@@ -27,10 +28,39 @@ function tableRow(props) {
           tooltipText={props.tooltipText}
         />
       </td>
-      <td>
-        <a href={props.appLink}>{props.appLink}</a>
+      <td className="d-lg-none">
+        <div className="row">
+          <img
+            className="img-thumbnail image-cell"
+            alt="Not Available"
+            src={props.image}
+          ></img>
+        </div>
+        <div className="row justify-content-center pb-2">
+          <div className="col">
+            <p>
+              deployed link:&nbsp;
+              <a href={props.appLink}>{props.appLink}</a>
+            </p>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col">{props.desc}</div>
+        </div>
       </td>
-      <td>{props.desc}</td>
+      <td className="d-none d-lg-table-cell">
+        <div className="row justify-content-center pb-2">
+          <div className="col">
+            <p>
+              deployed link:&nbsp;
+              <a href={props.appLink}>{props.appLink}</a>
+            </p>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col">{props.desc}</div>
+        </div>
+      </td>
       <td>{props.children}</td>
     </tr>
   );
