@@ -110,16 +110,14 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="row align-items-center p-2 mb-2">
-            <div className="col">
-              {/* <div className="col"> */}
-              <SearchTable
-                selectSearch={filterValue}
-                selectChange={handleSelectChange}
-                filterFunc={handleSearchChange}
-              />
-              {/* </div> */}
-            </div>
+          <div className="row align-items-center justify-content-center p-4 mb-2">
+            {/* <div className="col"> */}
+            <SearchTable
+              selectSearch={filterValue}
+              selectChange={handleSelectChange}
+              filterFunc={handleSearchChange}
+            />
+            {/* </div> */}
           </div>
           <div className="row">
             <div className="table-responsive">
