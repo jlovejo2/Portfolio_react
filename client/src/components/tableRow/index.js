@@ -29,8 +29,12 @@ function tableRow(props) {
         />
       </td>
       <td className="d-lg-none">
-        <div className="row justify-content-center">{props.title}</div>
-        {/* <div className='row'></div> */}
+        <div className="row justify-content-center">
+          <div className="col">{props.title}</div>
+        </div>
+        <div className="row">
+          <div className="col">{props.children}</div>
+        </div>
         <div className="row">
           <img
             className="img-thumbnail image-cell p-2"
