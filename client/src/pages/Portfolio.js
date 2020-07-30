@@ -186,11 +186,11 @@ const Portfolio = () => {
                         tooltipText={"Click to see a GIF"}
                         handleOpenGif={handleGifModalOpen}
                       >
-                        {console.log(window.innerWidth)}
                         <UnorderList
                           bootStrapList
                           classes=""
                           horizontal={window.innerWidth < 992 ? true : false}
+                          listItemWidth={100 / value.tech.length}
                         >
                           {value.tech.map((value, index) => {
                             return <ListItem key={index}>{value}</ListItem>;

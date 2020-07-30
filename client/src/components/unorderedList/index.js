@@ -5,7 +5,7 @@ export function UnorderList(props) {
   // console.log(props.key);
   return (
     <ul
-      className={`${props.bootStrapList ? "list-group " : ""} ${
+      className={`p-0 ${props.bootStrapList ? "list-group " : ""} ${
         props.horizontal
           ? "list-group-horizontal portfolio-table__UL-fontSize"
           : ""
@@ -17,5 +17,12 @@ export function UnorderList(props) {
 }
 
 export function ListItem(props) {
-  return <li className={`${props.classes} p-2`}>{props.children}</li>;
+  return (
+    <li
+      className={`${props.classes} p-2`}
+      style={{ width: `${props.customStyling}%` }}
+    >
+      {props.children}
+    </li>
+  );
 }
