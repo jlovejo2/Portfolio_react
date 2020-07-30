@@ -19,6 +19,9 @@ const Portfolio = () => {
   const [gifOpen, setGifOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState(portfolioObject[0]);
 
+  // let windowWidthSize = window.innerWidth;
+  // console.log(windowWidthSize);
+
   function handleContactOpen() {
     setContactOpen(true);
   }
@@ -183,7 +186,12 @@ const Portfolio = () => {
                         tooltipText={"Click to see a GIF"}
                         handleOpenGif={handleGifModalOpen}
                       >
-                        <UnorderList>
+                        {console.log(window.innerWidth)}
+                        <UnorderList
+                          bootStrapList
+                          classes=""
+                          horizontal={window.innerWidth < 992 ? true : false}
+                        >
                           {value.tech.map((value, index) => {
                             return <ListItem key={index}>{value}</ListItem>;
                           })}
