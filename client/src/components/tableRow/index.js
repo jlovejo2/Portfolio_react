@@ -7,7 +7,7 @@ function tableRow(props) {
   return (
     <tr>
       {/* <th scope={props.scope}>{props.num + 1}</th> */}
-      <td>{props.title}</td>
+      <td className="d-none d-lg-table-cell">{props.title}</td>
       <td
         className="d-none d-lg-table-cell"
         onMouseEnter={props.startAnimate}
@@ -29,9 +29,11 @@ function tableRow(props) {
         />
       </td>
       <td className="d-lg-none">
+        <div className="row justify-content-center">{props.title}</div>
+        {/* <div className='row'></div> */}
         <div className="row">
           <img
-            className="img-thumbnail image-cell"
+            className="img-thumbnail image-cell p-2"
             alt="Not Available"
             src={props.image}
           ></img>
@@ -61,7 +63,7 @@ function tableRow(props) {
           <div className="col">{props.desc}</div>
         </div>
       </td>
-      <td>{props.children}</td>
+      <td className="d-none d-lg-table-cell">{props.children}</td>
     </tr>
   );
 }
