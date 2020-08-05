@@ -1,5 +1,24 @@
 const portfolioObject = [
   {
+    imgLink: "assets/images/HouseShare.png",
+    appLink: "https://consilience-jlovejo2.herokuapp.com",
+    title: "Home Share App",
+    functionalPreview: "",
+    description: "",
+    tech: [
+      "React",
+      "Javascript",
+      "MongoDB",
+      "Mongoose",
+      "Node.js",
+      "Material-UI",
+      "Axios",
+      "User-Authentication",
+      "JSON Web Tokens",
+      "Cookie-Parser",
+    ],
+  },
+  {
     imgLink: "assets/images/Consilience.png",
     appLink: "https://consilience-jlovejo2.herokuapp.com",
     title: "Consilience",
