@@ -31,9 +31,6 @@ const Portfolio = () => {
   }
 
   useEffect(() => {
-    console.log(filterValue);
-    console.log(search);
-
     if (!search) {
       setFilteredProjects(projects);
     } else {
@@ -51,7 +48,7 @@ const Portfolio = () => {
         setFilteredProjects(filterProjs);
       }
     }
-  }, [search]);
+  }, [filterValue, projects, search]);
 
   const handleSearchChange = (event) => {
     console.log("search change");
