@@ -19,7 +19,7 @@ export function UnorderList(props) {
 export function ListItem(props) {
   return (
     <li
-      className={`${props.classes} p-2`}
+      className={`${props.classes} p-1`}
       style={{ width: `${props.customStyling}%` }}
     >
       {props.children}

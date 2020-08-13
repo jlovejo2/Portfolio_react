@@ -183,20 +183,20 @@ const Portfolio = () => {
                       >
                         <UnorderList
                           bootStrapList
-                          classes=""
+                          classes="m-1"
                           horizontal={window.innerWidth < 992 ? true : false}
                           listItemWidth={100 / value.tech.length}
                         >
-                          {value.tech.length < 6 && window.innerWidth < 992 ? (
-                            value.tech.map((value, index) => {
-                              return <ListItem key={index}>{value}</ListItem>;
-                            })
-                          ) : (
+                          {window.innerWidth < 992 ? (
                             <p className="portfolio-card__horizontal-tech">
                               {value.tech.map((value, index) => {
                                 return `${value}, `;
                               })}
                             </p>
+                          ) : (
+                            value.tech.map((value, index) => {
+                              return <ListItem key={index}>{value}</ListItem>;
+                            })
                           )}
                         </UnorderList>
                       </TableRow>
