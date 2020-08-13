@@ -1,6 +1,6 @@
 const portfolioObject = [
   {
-    imgLink: "assets/images/HouseShare.png",
+    imgLink: "assets/images/House_Share.png",
     appLink: "https://consilience-jlovejo2.herokuapp.com",
     title: "Home Share App",
     functionalPreview: "",
