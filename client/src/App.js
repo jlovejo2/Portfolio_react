@@ -63,15 +63,24 @@ function App() {
                   :&nbsp; 630 740-3285
                 </p>
               </ListItem>*/}
-              <ListItem>
-                <p onClick={handleContactOpen}>
+              <ListItem customStyling="100 mr-2">
+                <button
+                  className="footer__button-link"
+                  onClick={handleContactOpen}
+                >
                   <FontAwesomeIcon
+                    className="icons-footer__email icons-footer__email-large-width"
                     icon={faEnvelope}
                     size={"1x"}
                     color={"white"}
                   />
-                  :&nbsp; james.lovejoy2@gmail.com
-                </p>
+                  <span
+                    className="footer__email-text"
+                    style={{ textDecoration: "underline" }}
+                  >
+                    james.lovejoy2@gmail.com
+                  </span>
+                </button>
               </ListItem>
             </UnorderList>
           }

@@ -40,3 +40,23 @@ p {
   font-weight: 700;
   margin-top: 5px;
 }
+
+.footer__button-link {
+  text-align: center;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  /* text-decoration: underline; */
+}
+
+.icons-footer__email {
+  margin-right: 3px;
+  margin-top: 7px;
+}
+
+.footer__email-text {
+  padding-left: 3px;
+}
