@@ -148,3 +148,12 @@
     margin-bottom: 0;
   }
 }
+
+@media screen and (max-width: 740px) {
+  .footer__email-text {
+    visibility: hidden;
+  }
+  .icons-footer__email-large-width {
+    visibility: hidden;
+  }
+}
