@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function tooltip(props) {
+function Tooltip(props) {
   if (props.makeVisible)
     return (
       <div id="tooltip" className="bottom">
@@ -15,4 +15,4 @@ function tooltip(props) {
   }
 }
 
-export default tooltip;
+export default Tooltip;

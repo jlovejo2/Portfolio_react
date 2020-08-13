@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Container, Row } from "../components/Grid";
-
-// import ContactModal from "../components/ContactModal";
 import SideNav from "../components/SideNav";
 import RootContext from "../utils/RootContext";
 
 // import Carousel from "react-bootstrap/Carousel";
 import Jumbotron from "../components/Jumbotron/jumbotron";
+import Tooltip from "../components/Tooltip/tooltip";
 
 function About() {
   // const [contactOpen, setContactOpen] = useState(false);
   const [cycleTechTextClass, setCycleTechTextClass] = useState(true);
+  const [openTooltip, setOpenTooltip] = useState(false);
   const [rotatingText /*setRotatingText*/] = useState([
     "React.js ",
     "Redux",
@@ -28,13 +28,13 @@ function About() {
     "Material-ui",
   ]);
 
-  // function handleContactOpen() {
-  //   setContactOpen(true);
-  // }
+  function handleTooltipOpen(event) {
+    setOpenTooltip(true);
+  }
 
-  // function handleContactClose() {
-  //   setContactOpen(false);
-  // }
+  function handleTooltipClose(event) {
+    setOpenTooltip(false);
+  }
 
   function handleClassChange() {
     if (cycleTechTextClass) setCycleTechTextClass(false);
@@ -59,9 +59,13 @@ function About() {
 
       <Row center={true}>
         <Jumbotron fluid title={"About Me"}>
-          {/* <div className="col-12"> */}
           <p className="rotatingText">
-            <button onClick={handleClassChange} id="rotatingTextButton">
+            <button
+              onClick={handleClassChange}
+              onMouseEnter={handleTooltipOpen}
+              onMouseLeave={handleTooltipClose}
+              id="rotatingTextButton"
+            >
               <span
                 className={`${cycleTechTextClass ? "centerMainRotate" : ""}`}
               >
@@ -81,9 +85,13 @@ function About() {
                   </span>
                 );
               })}
+              <hr />
+              <Tooltip
+                makeVisible={openTooltip}
+                tooltipText={"Click to stop animation"}
+              />
             </button>
           </p>
-          {/* </div> */}
         </Jumbotron>
       </Row>
       <Row center={true} classes={"about-me-container p-5"}>
@@ -103,7 +111,7 @@ function About() {
                       <div className="card-body">
                         <p className="card-text text-secondary">
                           Me repeling after setting a rock-climbing route in
-                          Dragoon Mts in souther Arizona.
+                          Dragoon Mts in southern Arizona.
                         </p>
                       </div>
                     </div>
