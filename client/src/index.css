@@ -33,3 +33,10 @@ p {
   font-family: "Roboto", "sans-serif";
   font-size: 12px;
 }
+
+.portfolio-table__deployed-link {
+  font-size: 15px;
+  font-family: "Arial", "sans-serif";
+  font-weight: 700;
+  margin-top: 5px;
+}
