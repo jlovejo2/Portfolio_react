@@ -8,6 +8,7 @@ import SideNav from "../components/SideNav";
 import ContactModal from "../components/ContactModal";
 import GifModal from "../components/GifModal/gifModal";
 import RootContext from "../utils/RootContext";
+import { convertArrayToString } from "../utils/customfunctions";
 
 const Portfolio = () => {
   const [filterValue, setFilterValue] = useState("");
@@ -37,7 +38,7 @@ const Portfolio = () => {
       if (filterValue === "title") {
         console.log("searching title");
         const filterProjs = projects.filter((project) => {
-          if (project.title.toString().includes(search)) {
+          if (project.title.toLowerCase().includes(search)) {
             return project;
           } else {
             return null;
@@ -47,7 +48,9 @@ const Portfolio = () => {
       } else {
         console.log("searching tech");
         const filterProjs = projects.filter((project) => {
-          if (project.tech.toString().includes(search)) return project;
+          const techArray = convertArrayToString(project.tech);
+          console.log(techArray);
+          if (techArray.toLowerCase().includes(search)) return project;
           else return null;
         });
         setFilteredProjects(filterProjs);
@@ -57,7 +60,10 @@ const Portfolio = () => {
 
   const handleSearchChange = (event) => {
     console.log("search change");
-    setSearch(event.target.value);
+
+    const searchQuery = event.target.value.toLowerCase();
+
+    setSearch(searchQuery);
 
     console.log(search);
   };
