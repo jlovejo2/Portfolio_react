@@ -77,7 +77,7 @@ function About() {
                         : "rotatingText-adjective2"
                     }`}
                   >
-                    {value}
+                    {cycleTechTextClass ? value : `${value}, `}
                   </span>
                 );
               })}
