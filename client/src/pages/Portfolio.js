@@ -122,22 +122,17 @@ const Portfolio = () => {
             </div>
           </div>
           <div className="row align-items-center justify-content-center pb-1 mb-2">
-            {/* <div className="col"> */}
             <SearchTable
               selectSearch={filterValue}
               selectChange={handleSelectChange}
               filterFunc={handleSearchChange}
             />
-            {/* </div> */}
           </div>
           <div className="row p-3">
             <div className="table-responsive">
               <table className="table">
                 <thead className="thead-dark">
                   <tr>
-                    {/* <th scope="col" style={{ width: "5%" }}>
-                      #
-                    </th> */}
                     <th scope="col" style={{ width: "5%" }}>
                       Title
                     </th>
@@ -150,14 +145,6 @@ const Portfolio = () => {
                     >
                       Image
                     </th>
-                    {/* <th scope='col' style={{ width: '20%' }}>Functional Preview</th> */}
-                    {/* <th
-                      className="d-md-none"
-                      scope="col"
-                      style={{ width: "5%" }}
-                    >
-                      Deployed App Link
-                    </th> */}
                     <th
                       className="d-none d-lg-table-cell"
                       scope="col"
@@ -220,7 +207,6 @@ const Portfolio = () => {
             </div>
           </div>
           <ContactModal
-            // modalClasses={"contactModal"}
             showContact={contactOpen}
             closeContact={handleContactClose}
           />
