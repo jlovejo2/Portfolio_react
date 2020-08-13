@@ -4,9 +4,9 @@ import "./style.css";
 function tooltip(props) {
   if (props.makeVisible)
     return (
-      <div id="tooltip" class="bottom">
-        <div class="tooltip-arrow" />
-        <div class="tooltip-label">{props.tooltipText}</div>
+      <div id="tooltip" className="bottom">
+        <div className="tooltip-arrow" />
+        <div className="tooltip-label">{props.tooltipText}</div>
         {props.children}
       </div>
     );
