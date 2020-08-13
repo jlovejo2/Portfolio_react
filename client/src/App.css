@@ -84,52 +84,84 @@
 @keyframes rotate {
   0% {
     opacity: 0;
-    animation-timing-function: ease-in;
+    animation-timing-function: linear;
   }
 
-  8%,
-  16% {
+  2%,
+  6% {
     opacity: 1;
     height: 60px;
   }
 
-  30% {
+  10% {
     opacity: 0;
     height: 60px;
   }
 
   100% {
     opacity: 0;
-    animation-timing-function: ease-out;
+    animation-timing-function: linear;
   }
 }
 
 .rotatingText-1 {
   animation-name: rotate;
-  animation-duration: 18s;
-  animation-timing-function: linear;
+  animation-duration: 56s;
+  animation-timing-function: ease-in;
   animation-iteration-count: infinite;
   /* animation-delay: 0s; */
 }
 
 .rotatingText-adjective:nth-of-type(2) {
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 
 .rotatingText-adjective:nth-of-type(3) {
-  animation-delay: 6s;
+  animation-delay: 8s;
 }
 
 .rotatingText-adjective:nth-of-type(4) {
-  animation-delay: 9s;
-}
-
-.rotatingText-adjective:nth-of-type(5) {
   animation-delay: 12s;
 }
 
+.rotatingText-adjective:nth-of-type(5) {
+  animation-delay: 16s;
+}
+
 .rotatingText-adjective:nth-of-type(6) {
-  animation-delay: 15s;
+  animation-delay: 20s;
+}
+
+.rotatingText-adjective:nth-of-type(7) {
+  animation-delay: 24s;
+}
+
+.rotatingText-adjective:nth-of-type(8) {
+  animation-delay: 28s;
+}
+
+.rotatingText-adjective:nth-of-type(9) {
+  animation-delay: 32s;
+}
+
+.rotatingText-adjective:nth-of-type(10) {
+  animation-delay: 36s;
+}
+
+.rotatingText-adjective:nth-of-type(11) {
+  animation-delay: 40s;
+}
+
+.rotatingText-adjective:nth-of-type(12) {
+  animation-delay: 44s;
+}
+
+.rotatingText-adjective:nth-of-type(13) {
+  animation-delay: 48s;
+}
+
+.rotatingText-adjective:nth-of-type(14) {
+  animation-delay: 52s;
 }
 
 @media screen and (min-width: 768px) {
@@ -143,7 +175,7 @@
   .centerMainRotate {
     position: absolute;
     left: 0px;
-    right: 120px;
+    right: 170px;
     top: 73px;
     margin-bottom: 0;
   }

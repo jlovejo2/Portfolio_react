@@ -14,14 +14,18 @@ function About() {
   const [rotatingText /*setRotatingText*/] = useState([
     "React.js ",
     "Redux",
+    "Apollo",
+    "Typescript",
+    "GraphQL",
     "SQL ",
     "MongoDB ",
     "Node.js ",
     "JWTs ",
-    // "Bootstrap",
-    // "Bulma",
-    // "Materialize",
-    // "Material-ui",
+    "Ant-design",
+    "Bootstrap",
+    "Bulma",
+    "Materialize",
+    "Material-ui",
   ]);
 
   // function handleContactOpen() {
@@ -93,7 +97,7 @@ function About() {
                       <img
                         id="me"
                         className="img-fluid float-left"
-                        src="assets/images/IMG_5965.JPG"
+                        src={`https://res.cloudinary.com/jlovejo2/image/upload/v1597348985/Portfolio/IMG_5965_gt0ltp.jpg`}
                         alt="This is me"
                       ></img>
                       <div className="card-body">
