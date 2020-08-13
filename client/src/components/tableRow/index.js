@@ -44,8 +44,8 @@ function tableRow(props) {
         </div>
         <div className="row justify-content-center pb-2">
           <div className="col">
-            <p>
-              deployed link:&nbsp;
+            <p className="portfolio-table__deployed-link">
+              <i>deployed link:&nbsp;</i>
               <a href={props.appLink}>{props.appLink}</a>
             </p>
           </div>
@@ -57,8 +57,8 @@ function tableRow(props) {
       <td className="d-none d-lg-table-cell">
         <div className="row justify-content-center pb-2">
           <div className="col">
-            <p>
-              deployed link:&nbsp;
+            <p className="portfolio-table__deployed-link">
+              <i>deployed link:&nbsp;</i>
               <a href={props.appLink}>{props.appLink}</a>
             </p>
           </div>

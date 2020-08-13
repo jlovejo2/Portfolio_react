@@ -100,7 +100,7 @@ const Portfolio = () => {
       </RootContext.Consumer>
       <Row center={true}>
         <div className="content animated fadeInRight delay-1s col-lg-10">
-          <div className="row justify-content-center font-weight-bold w-100 p-4 mt-4">
+          <div className="row justify-content-center font-weight-bold w-100 pt-2 mt-4">
             <div className="col-10">
               <h3>Portfolio</h3>
               <p>
@@ -110,7 +110,7 @@ const Portfolio = () => {
               </p>
             </div>
           </div>
-          <div className="row align-items-center justify-content-center p-4 mb-2">
+          <div className="row align-items-center justify-content-center pb-1 mb-2">
             {/* <div className="col"> */}
             <SearchTable
               selectSearch={filterValue}

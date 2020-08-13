@@ -4,9 +4,9 @@ function searchTable(props) {
   // console.log(props.key);
   return (
     <Fragment>
-      <div className="col-md-6">
+      <div className="col-md-4">
         {/* <div className="input-group-prepend"> */}
-        <label className="mr-3">
+        <label>
           Select Filter Option
           <select
             className="custom-select"
@@ -19,7 +19,7 @@ function searchTable(props) {
           </select>
         </label>
       </div>
-      <div className="col-md-6 mt-3">
+      <div className="col-md-8 mt-3">
         <input
           type="text"
           className="form-control"
