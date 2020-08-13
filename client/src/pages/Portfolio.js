@@ -189,9 +189,17 @@ const Portfolio = () => {
                           horizontal={window.innerWidth < 992 ? true : false}
                           listItemWidth={100 / value.tech.length}
                         >
-                          {value.tech.map((value, index) => {
-                            return <ListItem key={index}>{value}</ListItem>;
-                          })}
+                          {value.tech.length < 6 && window.innerWidth < 992 ? (
+                            value.tech.map((value, index) => {
+                              return <ListItem key={index}>{value}</ListItem>;
+                            })
+                          ) : (
+                            <p className="portfolio-card__horizontal-tech">
+                              {value.tech.map((value, index) => {
+                                return `${value}, `;
+                              })}
+                            </p>
+                          )}
                         </UnorderList>
                       </TableRow>
                     );
