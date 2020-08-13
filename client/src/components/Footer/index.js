@@ -3,9 +3,9 @@ import "./style.css";
 
 function Footer(props) {
   return (
-    <div className="fixed-bottom min-10 text-center footer-style">
+    <div className="fixed-bottom min-10 footer-style">
       <div className="row align-items-center">
-        <div className="d-flex col-5 justify-content-start childLeft">
+        <div className="d-flex col-5 justify-content-start">
           {props.childrenLeft}
         </div>
         <div className="d-flex col-2 justify-content-center p-2">
