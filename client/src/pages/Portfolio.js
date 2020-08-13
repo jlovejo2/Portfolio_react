@@ -37,13 +37,18 @@ const Portfolio = () => {
       if (filterValue === "title") {
         console.log("searching title");
         const filterProjs = projects.filter((project) => {
-          if (project.title.toString().includes(search)) return project;
+          if (project.title.toString().includes(search)) {
+            return project;
+          } else {
+            return null;
+          }
         });
         setFilteredProjects(filterProjs);
       } else {
         console.log("searching tech");
         const filterProjs = projects.filter((project) => {
           if (project.tech.toString().includes(search)) return project;
+          else return null;
         });
         setFilteredProjects(filterProjs);
       }
