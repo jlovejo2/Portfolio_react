@@ -12,10 +12,7 @@ function tableRow(props) {
         className="d-none d-lg-table-cell"
         onMouseEnter={props.startAnimate}
         onClick={props.handleOpenGif}
-        // data-link={props.gifLink}
-        // data-desc={props.desc}
-        // data-title={props.title}
-        data-projIndex={props.num}
+        data-projindex={props.num}
         onMouseLeave={props.stopAnimate}
       >
         <img

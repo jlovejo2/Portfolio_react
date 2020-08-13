@@ -77,7 +77,7 @@ const Portfolio = () => {
   };
 
   const handleGifTooltipOpen = (event) => {
-    const projectIndex = event.target.getAttribute("data-projIndex");
+    const projectIndex = event.target.getAttribute("data-projindex");
     setCurrentProject(projects[projectIndex]);
     setImageTooltip(true);
 
