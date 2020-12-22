@@ -7,6 +7,7 @@ import "./style.css";
 
 function ContactModal(props) {
   const [contactForm, setContactForm] = useState([]);
+  const [contactError, setContactError] = useState({fullname: '', email: '', subject: ''})
   const [show, setShow] = useState(false);
 
   function handleClose(event) {
@@ -14,10 +15,36 @@ function ContactModal(props) {
   }
 
   function handleInputChange(event) {
-    console.log(event.target.name);
     const { name, value } = event.target;
+    let message = '';
+    console.log('name value', name, value)
+    
+    if ( value.length <= 0 ) {
+      switch (name) {
+        case 'fullname':
+          message = 'Full name is required'
+          break;
+        
+        case 'email':
+          message = 'Email is required'
+          break;
+
+        case 'subject':
+          message = 'Subject is required'
+          break;
+
+        default:
+          message = ''
+          break;
+      }
+      console.log('name: ', name)
+      setContactError({...contactError, [name]: message})
+    } else {
+      setContactError({...contactError, [name]: ''})
+    }
+
     setContactForm({ ...contactForm, [name]: value });
-    console.log(contactForm);
+    console.log(contactError)
   }
 
   function handleSubmit(event) {
@@ -34,6 +61,13 @@ function ContactModal(props) {
           if (res.data) setShow(true);
         })
         .catch((err) => console.log(err));
+    } else {
+      const errorObj = {
+        fullName: 'Name is required',
+        email: 'Email is required',
+        subject: 'Subject is required'
+      }
+      setContactError({...contactError, errorObj})
     }
   }
 
@@ -60,18 +94,21 @@ function ContactModal(props) {
                     placeholder="First and last name"
                     onChange={handleInputChange}
                   />
+                  <p className='errorMessage'>{contactError['fullname']}</p>
                   <Input
                     label="Email address"
                     name="email"
                     placeholder="name@example.com"
                     onChange={handleInputChange}
                   />
+                  <p className='errorMessage'>{contactError['email']}</p>
                   <Input
                     label="Subject"
                     name="subject"
                     placeholder="A brief description of why you are contacting me"
                     onChange={handleInputChange}
                   />
+                  <p className='errorMessage'>{contactError['subject']}</p>
                   <TextArea
                     label="Feel free to elaborate if subject was not enough room"
                     name="body"

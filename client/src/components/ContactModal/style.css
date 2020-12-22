@@ -12,3 +12,8 @@
   font-family: "Helvetica", sans-serif;
   font-size: 30px;
 }
+
+.errorMessage {
+  color: red;
+  font-size: 16px;
+}
