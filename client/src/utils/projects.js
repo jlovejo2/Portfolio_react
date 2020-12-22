@@ -1,10 +1,10 @@
 const portfolioObject = [
   {
     imgLink: "assets/images/House_Share.png",
-    appLink: "https://consilience-jlovejo2.herokuapp.com",
+    appLink: "https://th-deploy-jlovejo2.herokuapp.com",
     title: "Home Share App",
     functionalPreview: "",
-    description: "",
+    description: "This App is an app simulating a rental property booking app similar to VrBo and AirBnB. The goal of this App was to learn how to integrate users, creating listings of properties to be viewed, and then allow users to search for listings based on location and book them.",
     tech: [
       "Graphql",
       "Typescript",
